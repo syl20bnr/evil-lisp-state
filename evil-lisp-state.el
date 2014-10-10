@@ -88,7 +88,7 @@
 (define-key evil-lisp-state-map "P"   'evil-paste-before)
 (define-key evil-lisp-state-map "r"   'sp-raise-sexp)
 (define-key evil-lisp-state-map "R"   'sp-rewrap-sexp)
-(define-key evil-lisp-state-map "C-r" 'undo-tree-redo)
+(define-key evil-lisp-state-map (kbd "C-r") 'undo-tree-redo)
 (define-key evil-lisp-state-map "ska" 'sp-splice-sexp-killing-around)
 (define-key evil-lisp-state-map "skh" 'sp-splice-sexp-killing-backward)
 (define-key evil-lisp-state-map "skl" 'sp-splice-sexp-killing-forward)
