@@ -52,6 +52,8 @@ Key Binding   | Function
 `k`           | sp-up-sexp
 `K`           | sp-backward-up-sexp
 `l`           | sp-forward-sexp
+`p`           | evil-past-after
+`P`           | evil-past-before
 `r`           | sp-raise-sexp (same as `ska`)
 `C-r`         | undo-tree-redo
 `ska`         | sp-splice-sexp-killing-around
@@ -61,6 +63,7 @@ Key Binding   | Function
 `sl`          | sp-forward-slurp-sexp
 `sx`          | sp-splice-sexp
 `u`           | undo-tree-undo
+`y`           | sp-copy-sexp
 `RET`         | sp-newline
 `ESC`         | evil-normal-state
 

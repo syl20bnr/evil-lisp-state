@@ -82,6 +82,8 @@
 (define-key evil-lisp-state-map "k"   'sp-up-sexp)
 (define-key evil-lisp-state-map "K"   'sp-backward-up-sexp)
 (define-key evil-lisp-state-map "l"   'sp-forward-sexp)
+(define-key evil-lisp-state-map "p"   'evil-paste-after)
+(define-key evil-lisp-state-map "P"   'evil-paste-before)
 (define-key evil-lisp-state-map "r"   'sp-raise-sexp)
 (define-key evil-lisp-state-map "C-r" 'undo-tree-redo)
 (define-key evil-lisp-state-map "ska" 'sp-splice-sexp-killing-around)
@@ -91,6 +93,7 @@
 (define-key evil-lisp-state-map "sl"  'sp-forward-slurp-sexp)
 (define-key evil-lisp-state-map "sx"  'sp-splice-sexp)
 (define-key evil-lisp-state-map "u"   'undo-tree-undo)
+(define-key evil-lisp-state-map "y"   'sp-copy-sexp)
 
 (define-key evil-lisp-state-map (kbd "RET") 'sp-newline)
 (define-key evil-lisp-state-map [escape]    'evil-normal-state)
