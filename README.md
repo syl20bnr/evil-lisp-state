@@ -65,6 +65,8 @@ Key Binding   | Function
 `sh`          | sp-backward-slurp-sexp
 `sl`          | sp-forward-slurp-sexp
 `sx`          | sp-splice-sexp
+`t`           | sp-transpose-sexp
+`T`           | sp-transpose-hybrid-sexp
 `u`           | undo-tree-undo
 `U`           | sp-unwrap-sexp
 `y`           | sp-copy-sexp
