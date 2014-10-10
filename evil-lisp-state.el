@@ -47,6 +47,7 @@
   "Lisp state.
  Used to navigate lisp code and manipulate the sexp tree."
   :tag " <L> "
+  :enable (motion)
   :cursor (bar . 2)
   ;; force smartparens mode
   (if (evil-lisp-state-p) (smartparens-mode)))
@@ -102,7 +103,7 @@
 (define-key evil-lisp-state-map "u"   'undo-tree-undo)
 (define-key evil-lisp-state-map "U"   'sp-unwrap-sexp)
 (define-key evil-lisp-state-map "y"   'sp-copy-sexp)
-
+(define-key evil-lisp-state-map (kbd "DEL") 'evil-backward-char)
 (define-key evil-lisp-state-map (kbd "RET") 'sp-newline)
 (define-key evil-lisp-state-map [escape]    'evil-normal-state)
 
