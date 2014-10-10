@@ -36,7 +36,10 @@ Key Binding   | Function
 `bh`          | sp-backward-barf-sexp
 `bl`          | sp-forward-barf-sexp
 `c`           | sp-convolute-sexp
-`d`           | sp-kill-sexp
+`dd`          | sp-kill-hybrid-sexp
+`ds`          | sp-kill-symbol
+`dw`          | sp-kill-word
+`dx`          | sp-kill-sexp
 `e$`          | evil-lisp-state-eval-sexp-end-of-line
 `ef`          | eval-defun
 `el`          | eval-last-sexp
@@ -55,7 +58,7 @@ Key Binding   | Function
 `skl`         | sp-splice-sexp-killing-forward
 `sh`          | sp-backward-slurp-sexp
 `sl`          | sp-forward-slurp-sexp
-`ss`          | sp-splice-sexp
+`sx`          | sp-splice-sexp
 `u`           | undo-tree-undo
 `ESC`         | evil-normal-state
 
