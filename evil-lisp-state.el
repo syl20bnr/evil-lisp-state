@@ -99,8 +99,6 @@
 (define-key evil-lisp-state-map "T"   'sp-transpose-hybrid-sexp)
 (define-key evil-lisp-state-map "u"   'undo-tree-undo)
 (define-key evil-lisp-state-map "U"   'sp-unwrap-sexp)
-(define-key evil-lisp-state-map "w"   'sp-forward-symbol)
-(define-key evil-lisp-state-map "W"   'sp-forward-whitespace)
 (define-key evil-lisp-state-map "y"   'sp-copy-sexp)
 
 (define-key evil-lisp-state-map (kbd "RET") 'sp-newline)
