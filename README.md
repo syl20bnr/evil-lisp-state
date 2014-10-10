@@ -47,12 +47,14 @@ Key Binding   | Function
 `el`          | eval-last-sexp
 `es`          | eval-sexp
 `h`           | sp-backward-sexp
+`H`           | evil-backward-char
 `i`           | evil-insert-state
 `j`           | sp-down-sexp
 `J`           | sp-backward-down-sexp
 `k`           | sp-up-sexp
 `K`           | sp-backward-up-sexp
 `l`           | sp-forward-sexp
+`L`           | evil-forward-char
 `m`           | sp-join-sexp (think about `merge-sexp`)
 `p`           | evil-past-after
 `P`           | evil-past-before
