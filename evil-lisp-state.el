@@ -88,7 +88,7 @@
 (define-key evil-lisp-state-map "skl"  'sp-splice-sexp-killing-forward)
 (define-key evil-lisp-state-map "sh"  'sp-backward-slurp-sexp)
 (define-key evil-lisp-state-map "sl"  'sp-forward-slurp-sexp)
-(define-key evil-lisp-state-map "ss"  'sp-splice-sexp)
+(define-key evil-lisp-state-map "sx"  'sp-splice-sexp)
 (define-key evil-lisp-state-map "u"   'undo-tree-undo)
 (define-key evil-lisp-state-map [escape] 'evil-normal-state)
 
