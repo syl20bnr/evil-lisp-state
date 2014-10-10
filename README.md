@@ -28,7 +28,7 @@ both `evil` and `smartparens` to be installed.
 
 ## Configuration
 
-Example of a configuration overriding the `L` key bindings of `motion state`
+Example of a configuration overriding the `L` key bindings of `normal state`
 in order to trigger the `lisp state`.
 
 ```elisp
