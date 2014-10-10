@@ -52,6 +52,7 @@ Key Binding   | Function
 `k`           | sp-up-sexp
 `K`           | sp-backward-up-sexp
 `l`           | sp-forward-sexp
+`m`           | sp-join-sexp (think about `merge-sexp`)
 `p`           | evil-past-after
 `P`           | evil-past-before
 `r`           | sp-raise-sexp (same as `ska`)

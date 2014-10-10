@@ -82,6 +82,7 @@
 (define-key evil-lisp-state-map "k"   'sp-up-sexp)
 (define-key evil-lisp-state-map "K"   'sp-backward-up-sexp)
 (define-key evil-lisp-state-map "l"   'sp-forward-sexp)
+(define-key evil-lisp-state-map "m"   'sp-join-sexp)
 (define-key evil-lisp-state-map "p"   'evil-paste-after)
 (define-key evil-lisp-state-map "P"   'evil-paste-before)
 (define-key evil-lisp-state-map "r"   'sp-raise-sexp)
