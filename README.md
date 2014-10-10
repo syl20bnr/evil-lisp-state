@@ -70,8 +70,6 @@ Key Binding   | Function
 `u`           | undo-tree-undo
 `U`           | sp-unwrap-sexp
 `y`           | sp-copy-sexp
-`w`           | sp-forward-symbol
-`W`           | sp-forward-whitespace
 `RET`         | sp-newline
 `ESC`         | evil-normal-state
 
