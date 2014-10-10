@@ -61,9 +61,9 @@ Key Binding   | Function
 
 ## Thanks
 
-Thanks goes to the creators of `evil` and `smartparens` modes for their awesome
-contributions. Without them `evil-lisp-state` would have been a lot harder to
-implement.
+Thanks goes to the creators of [evil][evil-link] and [smartparens][smartparens-link]
+modes for their awesome contributions. Without them `evil-lisp-state` would
+have been a lot harder to implement.
 
 [evil-link]: https://gitorious.org/evil/pages/Home
 [smartparens-link]: https://github.com/Fuco1/smartparens/wiki
