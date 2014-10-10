@@ -1,6 +1,6 @@
 # evil-lisp-state
 
-Adds a new [evil][evil-link] state for navigating lisp code and edit sexp trees
+Adds a new [evil][evil-link] state to navigate lisp code and edit sexp trees
 using [smartparens][smartparens-link] and mnemonic key bindings.
 
 ## Install
