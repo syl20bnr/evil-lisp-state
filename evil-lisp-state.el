@@ -29,10 +29,13 @@
 ;; Adds a new Evil state called --LISP-- (<L>) with mnemonics key bindings
 ;; to navigate Lisp code and edit the sexp tree.
 
-;; Configuration example:
-;; (add-hook)
+;; Example of a configuration overriding the `L` key bindings of
+;; evil `motion state`:
 
-;; More information on the Github repository:
+;; (require 'evil-lisp-state)
+;; (define-key evil-normal-state-map "L" 'evil-lisp-state)
+
+;; More information in the readme of the repository:
 ;; https://github.com/syl20bnr/evil-lisp-state
 
 ;;; Code:
