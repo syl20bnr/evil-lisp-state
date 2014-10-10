@@ -36,6 +36,7 @@ Key Binding   | Function
 `bh`          | sp-backward-barf-sexp
 `bl`          | sp-forward-barf-sexp
 `c`           | sp-convolute-sexp
+`C`           | sp-comment
 `dd`          | sp-kill-hybrid-sexp
 `ds`          | sp-kill-symbol
 `dw`          | sp-kill-word
@@ -51,7 +52,7 @@ Key Binding   | Function
 `k`           | sp-up-sexp
 `K`           | sp-backward-up-sexp
 `l`           | sp-forward-sexp
-`r`           | sp-raise-sexp
+`r`           | sp-raise-sexp (same as `ska`)
 `C-r`         | undo-tree-redo
 `ska`         | sp-splice-sexp-killing-around
 `skh`         | sp-splice-sexp-killing-backward

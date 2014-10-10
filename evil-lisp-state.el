@@ -66,6 +66,7 @@
 (define-key evil-lisp-state-map "bh"  'sp-backward-barf-sexp)
 (define-key evil-lisp-state-map "bl"  'sp-forward-barf-sexp)
 (define-key evil-lisp-state-map "c"   'sp-convolute-sexp)
+(define-key evil-lisp-state-map "C"   'sp-comment)
 (define-key evil-lisp-state-map "dd"  'sp-kill-hybrid-sexp)
 (define-key evil-lisp-state-map "ds"  'sp-kill-symbol)
 (define-key evil-lisp-state-map "dw"  'sp-kill-word)
