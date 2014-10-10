@@ -1,4 +1,4 @@
-;;; evil-lisp-state.el --- Add an evil state to navigate Lisp code and edit the sexp tree with mnemonic key bindings using smartparens.
+;;; evil-lisp-state.el --- An evil state to navigate Lisp code and modify it with smartparens
 
 ;; Copyright (C) 2014 syl20bnr
 
