@@ -84,14 +84,16 @@
 (define-key evil-lisp-state-map "l"   'sp-forward-sexp)
 (define-key evil-lisp-state-map "r"   'sp-raise-sexp)
 (define-key evil-lisp-state-map "C-r" 'undo-tree-redo)
-(define-key evil-lisp-state-map "ska"  'sp-splice-sexp-killing-around)
-(define-key evil-lisp-state-map "skh"  'sp-splice-sexp-killing-backward)
-(define-key evil-lisp-state-map "skl"  'sp-splice-sexp-killing-forward)
+(define-key evil-lisp-state-map "ska" 'sp-splice-sexp-killing-around)
+(define-key evil-lisp-state-map "skh" 'sp-splice-sexp-killing-backward)
+(define-key evil-lisp-state-map "skl" 'sp-splice-sexp-killing-forward)
 (define-key evil-lisp-state-map "sh"  'sp-backward-slurp-sexp)
 (define-key evil-lisp-state-map "sl"  'sp-forward-slurp-sexp)
 (define-key evil-lisp-state-map "sx"  'sp-splice-sexp)
 (define-key evil-lisp-state-map "u"   'undo-tree-undo)
-(define-key evil-lisp-state-map [escape] 'evil-normal-state)
+
+(define-key evil-lisp-state-map (kbd "RET") 'sp-newline)
+(define-key evil-lisp-state-map [escape]    'evil-normal-state)
 
 (defun evil-lisp-state-eval-sexp-end-of-line ()
   "Evaluate the last sexp at the end of the current line."

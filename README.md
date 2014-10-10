@@ -61,6 +61,7 @@ Key Binding   | Function
 `sl`          | sp-forward-slurp-sexp
 `sx`          | sp-splice-sexp
 `u`           | undo-tree-undo
+`RET`         | sp-newline
 `ESC`         | evil-normal-state
 
 ## Thanks
