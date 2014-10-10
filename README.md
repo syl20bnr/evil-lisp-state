@@ -33,6 +33,7 @@ Key Binding   | Function
 --------------|------------------------------------------------------------
 `$`           | sp-end-of-sexp
 `0`           | sp-beginning-of-sexp
+`a`           | sp-absorb-sexp
 `bh`          | sp-backward-barf-sexp
 `bl`          | sp-forward-barf-sexp
 `c`           | sp-convolute-sexp

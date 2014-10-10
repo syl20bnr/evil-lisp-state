@@ -63,6 +63,7 @@
 (define-key evil-lisp-state-map "9"   'digit-argument)
 (define-key evil-lisp-state-map "$"   'sp-end-of-sexp)
 (define-key evil-lisp-state-map "0"   'sp-beginning-of-sexp)
+(define-key evil-lisp-state-map "a"   'sp-absorb-sexp)
 (define-key evil-lisp-state-map "bh"  'sp-backward-barf-sexp)
 (define-key evil-lisp-state-map "bl"  'sp-forward-barf-sexp)
 (define-key evil-lisp-state-map "c"   'sp-convolute-sexp)
