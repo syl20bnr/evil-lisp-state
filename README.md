@@ -5,10 +5,21 @@ using [smartparens][smartparens-link] and mnemonic key bindings.
 
 ## Install
 
-### MELPA
+### Package manager
 
-A [MELPA][melpa-link] package will be available soon. For you have to use the
-manual method.
+You can either install `evil-lisp-state` from [MELPA][melpa-link]:
+
+```
+ M-x package-install evil-list-state
+```
+
+Or add it to your `Cask` file:
+
+```elisp
+(source melpa)
+
+(depends-on "evil-lisp-state")
+```
 
 ### Manually
 
