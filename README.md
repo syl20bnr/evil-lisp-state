@@ -50,9 +50,9 @@ Key Binding   | Function
 `l`           | sp-forward-sexp
 `r`           | sp-raise-sexp
 `C-r`         | undo-tree-redo
-`sa`          | sp-splice-sexp-killing-around
-`sb`          | sp-splice-sexp-killing-backward
-`sf`          | sp-splice-sexp-killing-forward
+`ska`         | sp-splice-sexp-killing-around
+`skh`         | sp-splice-sexp-killing-backward
+`skl`         | sp-splice-sexp-killing-forward
 `sh`          | sp-backward-slurp-sexp
 `sl`          | sp-forward-slurp-sexp
 `ss`          | sp-splice-sexp
