@@ -50,9 +50,12 @@ Key Binding   | Function
 `c`           | sp-convolute-sexp
 `C`           | sp-comment
 `dd`          | sp-kill-hybrid-sexp
-`ds`          | sp-kill-symbol
-`dw`          | sp-kill-word
-`dx`          | sp-kill-sexp
+`dh`          | sp-backward-kill-sexp
+`dl`          | sp-kill-sexp
+`dsl`         | sp-kill-symbol
+`dsh`         | sp-backward-kill-symbol
+`dwl`         | sp-kill-word
+`dwh`         | sp-backward-kill-word
 `e$`          | evil-lisp-state-eval-sexp-end-of-line
 `ef`          | eval-defun
 `el`          | eval-last-sexp
