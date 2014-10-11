@@ -68,7 +68,7 @@ Key Binding   | Function
 `dd`          | sp-kill-hybrid-sexp
 `dx`          | sp-kill-sexp
 `ndx`         | sp-backward-kill-sexp
-`ds`x         | sp-kill-symbol
+`ds`          | sp-kill-symbol
 `nds`         | sp-backward-kill-symbol
 `dw`          | sp-kill-word
 `ndw`         | sp-backward-kill-word
