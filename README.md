@@ -77,12 +77,14 @@ Key Binding   | Function
 `el`          | eval-last-sexp
 `es`          | eval-sexp
 `h`           | sp-backward-sexp
+`H`           | sp-backward-symbol
 `i`           | evil-insert-state
 `j`           | sp-down-sexp
 `J`           | sp-backward-down-sexp
 `k`           | sp-backward-up-sexp
 `K`           | sp-up-sexp
 `l`           | sp-forward-sexp
+`L`           | sp-forward-symbol
 `m`           | sp-join-sexp (think about `merge-sexp`)
 `p`           | evil-past-after
 `P`           | evil-past-before
@@ -100,8 +102,6 @@ Key Binding   | Function
 `nU`          | sp-backward-unwrap-sexp
 `y`           | sp-copy-sexp
 `ny`          | sp-backward-copy-sexp
-`w`           | sp-forward-symbol
-`nw`          | sp-backward-symbol
 `RET`         | sp-newline
 `ESC`         | evil-normal-state
 
