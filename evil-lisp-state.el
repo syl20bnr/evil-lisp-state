@@ -5,7 +5,7 @@
 ;; Author: Sylvain Benner <sylvain.benner@gmail.com>
 ;; Keywords: convenience editing evil smartparens lisp mnemonic
 ;; Created: 9 Oct 2014
-;; Version: 1.0
+;; Version: 1.1
 ;; Package-Requires: ((evil "1.0.9") (smartparens "1.6.1"))
 ;; URL: https://github.com/syl20bnr/evil-lisp-state
 
@@ -52,6 +52,33 @@
   ;; force smartparens mode
   (if (evil-lisp-state-p) (smartparens-mode)))
 
+(defgroup evil-lisp-state nil
+  "Evil lisp state."
+  :group 'emulations
+  :prefix 'evil-lisp-state-)
+
+(defcustom evil-lisp-state-backward-prefix "n"
+  "Prefix to execute the backward version of a command"
+  :type 'string
+  :group 'evil-lisp-state)
+
+(defmacro evil-lisp-state-define-key (key command &optional backward)
+  "Define a key binding for KEY and COMMAND.
+
+If BACKWARD is not nil then a binding is also created for backward version
+of COMMAND.
+ The backward binding is prepended with `evil-lisp-state-backward-prefix'"
+  `(let* ((cmdstr ,(symbol-name command))
+          (cmdsym (intern (format "sp-%s" cmdstr))))
+     (define-key evil-lisp-state-map ,key cmdsym)
+     (if ,backward
+         (let* ((bcmdstr (if (string-match "forward" cmdstr)
+                             (replace-regexp-in-string "forward" "backward" cmdstr)
+                           (concat "backward-" cmdstr)))
+                (bcmdsym (intern (format "sp-%s" bcmdstr)))
+                (bkey ,(concat evil-lisp-state-backward-prefix key)))
+           (define-key evil-lisp-state-map bkey bcmdsym)))))
+
 ;; key bindings
 (define-key evil-lisp-state-map "1"   'digit-argument)
 (define-key evil-lisp-state-map "2"   'digit-argument)
@@ -65,17 +92,13 @@
 (define-key evil-lisp-state-map "$"   'sp-end-of-sexp)
 (define-key evil-lisp-state-map "0"   'sp-beginning-of-sexp)
 (define-key evil-lisp-state-map "a"   'sp-absorb-sexp)
-(define-key evil-lisp-state-map "bh"  'sp-backward-barf-sexp)
-(define-key evil-lisp-state-map "bl"  'sp-forward-barf-sexp)
+(evil-lisp-state-define-key     "b"    forward-barf-sexp t)
 (define-key evil-lisp-state-map "c"   'sp-convolute-sexp)
 (define-key evil-lisp-state-map "C"   'sp-comment)
 (define-key evil-lisp-state-map "dd"  'sp-kill-hybrid-sexp)
-(define-key evil-lisp-state-map "dh"  'sp-backward-kill-sexp)
-(define-key evil-lisp-state-map "dl"  'sp-kill-sexp)
-(define-key evil-lisp-state-map "dsh" 'sp-backward-kill-symbol)
-(define-key evil-lisp-state-map "dsl" 'sp-kill-symbol)
-(define-key evil-lisp-state-map "dwh" 'sp-backward-kill-word)
-(define-key evil-lisp-state-map "dwl" 'sp-kill-word)
+(evil-lisp-state-define-key     "dx"   kill-sexp t)
+(evil-lisp-state-define-key     "ds"   kill-symbol t)
+(evil-lisp-state-define-key     "dw"   kill-word t)
 (define-key evil-lisp-state-map "e$"  'evil-lisp-state-eval-sexp-end-of-line)
 (define-key evil-lisp-state-map "ef"  'eval-defun)
 (define-key evil-lisp-state-map "el"  'eval-last-sexp)
@@ -95,18 +118,13 @@
 (define-key evil-lisp-state-map "r"   'sp-raise-sexp)
 (define-key evil-lisp-state-map "R"   'sp-rewrap-sexp)
 (define-key evil-lisp-state-map (kbd "C-r") 'undo-tree-redo)
-(define-key evil-lisp-state-map "ska" 'sp-splice-sexp-killing-around)
-(define-key evil-lisp-state-map "skh" 'sp-splice-sexp-killing-backward)
-(define-key evil-lisp-state-map "skl" 'sp-splice-sexp-killing-forward)
-(define-key evil-lisp-state-map "sh"  'sp-backward-slurp-sexp)
-(define-key evil-lisp-state-map "sl"  'sp-forward-slurp-sexp)
-(define-key evil-lisp-state-map "sx"  'sp-splice-sexp)
+(evil-lisp-state-define-key     "s"    forward-slurp-sexp t)
+(evil-lisp-state-define-key     "S"    splice-sexp-killing-forward t)
 (define-key evil-lisp-state-map "t"   'sp-transpose-sexp)
 (define-key evil-lisp-state-map "T"   'sp-transpose-hybrid-sexp)
 (define-key evil-lisp-state-map "u"   'undo-tree-undo)
-(define-key evil-lisp-state-map "U"   'sp-unwrap-sexp)
-(define-key evil-lisp-state-map "yh"  'sp-backward-copy-sexpp)
-(define-key evil-lisp-state-map "yl"  'sp-copy-sexp)
+(evil-lisp-state-define-key     "U"    unwrap-sexp t)
+(evil-lisp-state-define-key     "y"    copy-sexp t)
 (define-key evil-lisp-state-map (kbd "DEL") 'evil-backward-char)
 (define-key evil-lisp-state-map (kbd "RET") 'sp-newline)
 (define-key evil-lisp-state-map [escape]    'evil-normal-state)

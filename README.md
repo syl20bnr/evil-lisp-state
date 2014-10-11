@@ -36,26 +36,42 @@ in order to trigger the `lisp state`.
 (define-key evil-normal-state-map "L" 'evil-lisp-state)
 ```
 
+To change custom variables:
+
+```
+M-x customize-group evil-lisp-state
+```
+
+### Backward prefix
+
+Corresponding backward version of a command is performed by a common prefix
+whose value is determined by the custom variable
+`evil-lisp-state-backward-prefix`. Default value is `n`.
+
+For instance, `slurping forward` is performed with `s` and the backward
+version `slurping backward` with `ns`.
+
 ## Key bindings map
 
-While in `lisp state`:
+While in `lisp state` (assume that `evil-lisp-state-backward-prefix` is set
+to default `n`):
 
 Key Binding   | Function
 --------------|------------------------------------------------------------
 `$`           | sp-end-of-sexp
 `0`           | sp-beginning-of-sexp
 `a`           | sp-absorb-sexp
-`bh`          | sp-backward-barf-sexp
-`bl`          | sp-forward-barf-sexp
+`b`           | sp-forward-barf-sexp
+`nb`          | sp-backward-barf-sexp
 `c`           | sp-convolute-sexp
 `C`           | sp-comment
 `dd`          | sp-kill-hybrid-sexp
-`dh`          | sp-backward-kill-sexp
-`dl`          | sp-kill-sexp
-`dsl`         | sp-kill-symbol
-`dsh`         | sp-backward-kill-symbol
-`dwl`         | sp-kill-word
-`dwh`         | sp-backward-kill-word
+`dx`          | sp-kill-sexp
+`ndx`         | sp-backward-kill-sexp
+`ds`x         | sp-kill-symbol
+`nds`         | sp-backward-kill-symbol
+`dw`          | sp-kill-word
+`ndw`         | sp-backward-kill-word
 `e$`          | evil-lisp-state-eval-sexp-end-of-line
 `ef`          | eval-defun
 `el`          | eval-last-sexp
@@ -72,21 +88,20 @@ Key Binding   | Function
 `m`           | sp-join-sexp (think about `merge-sexp`)
 `p`           | evil-past-after
 `P`           | evil-past-before
-`r`           | sp-raise-sexp (same as `ska`)
+`r`           | sp-raise-sexp
 `R`           | sp-rewrap-sexp
 `C-r`         | undo-tree-redo
-`ska`         | sp-splice-sexp-killing-around
-`skh`         | sp-splice-sexp-killing-backward
-`skl`         | sp-splice-sexp-killing-forward
-`sh`          | sp-backward-slurp-sexp
-`sl`          | sp-forward-slurp-sexp
-`sx`          | sp-splice-sexp
+`s`           | sp-forward-slurp-sexp
+`ns`          | sp-backward-slurp-sexp
+`S`           | sp-splice-sexp-killing-forward
+`nS`          | sp-splice-sexp-killing-backward
 `t`           | sp-transpose-sexp
 `T`           | sp-transpose-hybrid-sexp
 `u`           | undo-tree-undo
 `U`           | sp-unwrap-sexp
-`yh`          | sp-backward-copy-sexp
-`yl`          | sp-copy-sexp
+`nU`          | sp-backward-unwrap-sexp
+`y`           | sp-copy-sexp
+`ny`          | sp-backward-copy-sexp
 `RET`         | sp-newline
 `ESC`         | evil-normal-state
 
