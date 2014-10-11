@@ -124,6 +124,7 @@ of COMMAND.
 (define-key evil-lisp-state-map "u"   'undo-tree-undo)
 (evil-lisp-state-define-key     "U"    unwrap-sexp t)
 (evil-lisp-state-define-key     "y"    copy-sexp t)
+(evil-lisp-state-define-key     "w"    forward-symbol t)
 (define-key evil-lisp-state-map (kbd "DEL") 'evil-backward-char)
 (define-key evil-lisp-state-map (kbd "RET") 'sp-newline)
 (define-key evil-lisp-state-map "i"         'evil-insert-state)

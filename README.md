@@ -100,6 +100,8 @@ Key Binding   | Function
 `nU`          | sp-backward-unwrap-sexp
 `y`           | sp-copy-sexp
 `ny`          | sp-backward-copy-sexp
+`w`           | sp-forward-symbol
+`nw`          | sp-backward-symbol
 `RET`         | sp-newline
 `ESC`         | evil-normal-state
 
