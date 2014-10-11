@@ -52,7 +52,8 @@
   ;; force smartparens mode
   (progn
     (if (evil-lisp-state-p) (smartparens-mode))
-    (setq sp-navigate-consider-symbols nil)))
+    (setq sp-navigate-consider-symbols nil
+          sp-navigate-reindent-after-up nil)))
 
 (defgroup evil-lisp-state nil
   "Evil lisp state."
