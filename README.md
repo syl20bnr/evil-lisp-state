@@ -100,9 +100,9 @@ Key Binding   | Function
 `u`           | undo-tree-undo
 `U`           | sp-unwrap-sexp
 `nU`          | sp-backward-unwrap-sexp
-`y`           | sp-copy-sexp
 `x`           | sp-delete-char
 `X`           | sp-backward-delete-char
+`y`           | sp-copy-sexp
 `ny`          | sp-backward-copy-sexp
 `RET`         | sp-newline
 `ESC`         | evil-normal-state
