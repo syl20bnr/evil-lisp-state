@@ -85,7 +85,8 @@ Key Binding   | Function
 `T`           | sp-transpose-hybrid-sexp
 `u`           | undo-tree-undo
 `U`           | sp-unwrap-sexp
-`y`           | sp-copy-sexp
+`yh`          | sp-backward-copy-sexp
+`yl`          | sp-copy-sexp
 `RET`         | sp-newline
 `ESC`         | evil-normal-state
 
