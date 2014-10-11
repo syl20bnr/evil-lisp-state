@@ -50,7 +50,9 @@
   :enable (motion)
   :cursor (bar . 2)
   ;; force smartparens mode
-  (if (evil-lisp-state-p) (smartparens-mode)))
+  (progn
+    (if (evil-lisp-state-p) (smartparens-mode))
+    (setq sp-navigate-consider-symbols nil)))
 
 (defgroup evil-lisp-state nil
   "Evil lisp state."
