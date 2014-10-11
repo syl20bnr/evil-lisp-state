@@ -101,6 +101,8 @@ Key Binding   | Function
 `U`           | sp-unwrap-sexp
 `nU`          | sp-backward-unwrap-sexp
 `y`           | sp-copy-sexp
+`x`           | sp-delete-char
+`X`           | sp-backward-delete-char
 `ny`          | sp-backward-copy-sexp
 `RET`         | sp-newline
 `ESC`         | evil-normal-state
