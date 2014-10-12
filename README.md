@@ -96,15 +96,15 @@ Key Binding   | Function
 `ef`          | eval-defun
 `el`          | eval-last-sexp
 `es`          | eval-sexp
-`h`           | sp-backward-sexp
-`H`           | sp-backward-symbol
+`h`           | sp-backward-symbol
+`H`           | sp-backward-sexp
 `i`           | evil-insert-state
 `j`           | sp-down-sexp
 `J`           | sp-backward-down-sexp
 `k`           | sp-up-sexp
 `K`           | sp-backward-up-sexp
-`l`           | sp-forward-sexp
-`L`           | sp-forward-symbol
+`l`           | sp-forward-symbol
+`L`           | sp-forward-sexp
 `m`           | sp-join-sexp (think about `merge-sexp`)
 `p`           | evil-past-after
 `P`           | evil-past-before
