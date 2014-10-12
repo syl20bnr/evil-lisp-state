@@ -3,6 +3,21 @@
 Adds a new [evil][evil-link] state to navigate lisp code and edit sexp trees
 using [smartparens][smartparens-link] and mnemonic key bindings.
 
+<!-- markdown-toc start - Don't edit this section. Run M-x markdown-toc/generate-toc again -->
+**Table of Contents**
+
+- [evil-lisp-state](#evil-lisp-state)
+    - [Install](#install)
+        - [Package manager](#package-manager)
+        - [Manually](#manually)
+    - [Configuration](#configuration)
+        - [Backward prefix](#backward-prefix)
+    - [Text selection](#text-selection)
+    - [Key bindings map](#key-bindings-map)
+    - [Thanks](#thanks)
+
+<!-- markdown-toc end -->
+
 ## Install
 
 ### Package manager
@@ -50,6 +65,11 @@ whose value is determined by the custom variable
 
 For instance, `slurping forward` is performed with `s` and the backward
 version `slurping backward` with `ns`.
+
+## Text selection
+
+Text selection is done with [expand-region][expand-link] by pressing `v`.
+It is also possible to select the whole line with `V`.
 
 ## Key bindings map
 
@@ -100,6 +120,8 @@ Key Binding   | Function
 `u`           | undo-tree-undo
 `U`           | sp-unwrap-sexp
 `nU`          | sp-backward-unwrap-sexp
+`v`           | er/expand-region
+`V`           | select whole line and switch to `visual state`
 `x`           | sp-delete-char
 `X`           | sp-backward-delete-char
 `y`           | sp-copy-sexp
@@ -116,3 +138,4 @@ have been a lot harder to implement.
 [evil-link]: https://gitorious.org/evil/pages/Home
 [smartparens-link]: https://github.com/Fuco1/smartparens/wiki
 [melpa-link]: http://melpa.milkbox.net
+[expand-link]: https://github.com/magnars/expand-region.el

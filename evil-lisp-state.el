@@ -5,8 +5,8 @@
 ;; Author: Sylvain Benner <sylvain.benner@gmail.com>
 ;; Keywords: convenience editing evil smartparens lisp mnemonic
 ;; Created: 9 Oct 2014
-;; Version: 1.3
-;; Package-Requires: ((evil "1.0.9") (smartparens "1.6.1"))
+;; Version: 1.4
+;; Package-Requires: ((evil "1.0.9") (smartparens "1.6.1") (expand-region "0.10.0"))
 ;; URL: https://github.com/syl20bnr/evil-lisp-state
 
 ;; This file is not part of GNU Emacs.
@@ -126,6 +126,7 @@ of COMMAND.
 (define-key evil-lisp-state-map "T"   'sp-transpose-hybrid-sexp)
 (define-key evil-lisp-state-map "u"   'undo-tree-undo)
 (evil-lisp-state-define-key     "U"    unwrap-sexp t)
+(define-key evil-lisp-state-map "v"   'er/expand-region)
 (define-key evil-lisp-state-map "x"   'sp-delete-char)
 (define-key evil-lisp-state-map "X"   'sp-backward-delete-char)
 (evil-lisp-state-define-key     "y"    copy-sexp t)
