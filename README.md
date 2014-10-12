@@ -3,6 +3,10 @@
 Adds a new [evil][evil-link] state to navigate lisp code and edit sexp trees
 using [smartparens][smartparens-link] and mnemonic key bindings.
 
+**Although the core key bindings should not change a lot, this state is still
+_under experimentation_, expect the key bindings to be changed on a regular
+basis.**
+
 <!-- markdown-toc start - Don't edit this section. Run M-x markdown-toc/generate-toc again -->
 **Table of Contents**
 
