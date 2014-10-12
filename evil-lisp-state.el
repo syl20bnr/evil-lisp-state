@@ -115,6 +115,7 @@ of COMMAND.
 (define-key evil-lisp-state-map "l"   'sp-forward-symbol)
 (define-key evil-lisp-state-map "L"   'sp-forward-sexp)
 (define-key evil-lisp-state-map "m"   'sp-join-sexp)
+(define-key evil-lisp-state-map "o"   'evil-lisp-state-insert-below)
 (define-key evil-lisp-state-map "p"   'evil-paste-after)
 (define-key evil-lisp-state-map "P"   'evil-paste-before)
 (define-key evil-lisp-state-map "r"   'sp-raise-sexp)
@@ -141,5 +142,11 @@ of COMMAND.
   (save-excursion
     (evil-end-of-line)
     (eval-last-sexp nil)))
+
+(defun evil-lisp-state-insert-below ()
+  "Mimic `o' command for lisp state."
+  (interactive)
+  (evil-insert-state)
+  (sp-newline))
 
 (provide 'evil-lisp-state)

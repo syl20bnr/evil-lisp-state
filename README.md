@@ -110,6 +110,7 @@ Key Binding   | Function
 `l`           | sp-forward-symbol
 `L`           | sp-forward-sexp
 `m`           | sp-join-sexp (think about `merge-sexp`)
+`o`           | switch to `insert state` and add a new line below
 `p`           | evil-past-after
 `P`           | evil-past-before
 `r`           | sp-raise-sexp
