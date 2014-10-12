@@ -81,8 +81,8 @@ Key Binding   | Function
 `i`           | evil-insert-state
 `j`           | sp-down-sexp
 `J`           | sp-backward-down-sexp
-`k`           | sp-backward-up-sexp
-`K`           | sp-up-sexp
+`k`           | sp-up-sexp
+`K`           | sp-backward-up-sexp
 `l`           | sp-forward-sexp
 `L`           | sp-forward-symbol
 `m`           | sp-join-sexp (think about `merge-sexp`)
