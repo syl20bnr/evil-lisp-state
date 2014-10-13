@@ -96,6 +96,7 @@ Key Binding   | Function
 `nds`         | sp-backward-kill-symbol
 `dw`          | sp-kill-word
 `ndw`         | sp-backward-kill-word
+`D`           | evil-delete-line
 `e$`          | evil-lisp-state-eval-sexp-end-of-line
 `ef`          | eval-defun
 `el`          | eval-last-sexp
