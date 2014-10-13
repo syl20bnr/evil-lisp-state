@@ -82,6 +82,7 @@ to default `n`):
 
 Key Binding   | Function
 --------------|------------------------------------------------------------
+`(`           | switch to `insert state` and insert "("
 `$`           | sp-end-of-sexp
 `0`           | sp-beginning-of-sexp
 `a`           | sp-absorb-sexp

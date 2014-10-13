@@ -83,6 +83,7 @@ of COMMAND.
            (define-key evil-lisp-state-map bkey bcmdsym)))))
 
 ;; key bindings
+(define-key evil-lisp-state-map "("   (lambda () (interactive) (evil-insert "(")))
 (define-key evil-lisp-state-map "1"   'digit-argument)
 (define-key evil-lisp-state-map "2"   'digit-argument)
 (define-key evil-lisp-state-map "3"   'digit-argument)
