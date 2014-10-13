@@ -5,7 +5,7 @@
 ;; Author: Sylvain Benner <sylvain.benner@gmail.com>
 ;; Keywords: convenience editing evil smartparens lisp mnemonic
 ;; Created: 9 Oct 2014
-;; Version: 1.5.1
+;; Version: 1.5.2
 ;; Package-Requires: ((evil "1.0.9") (smartparens "1.6.1") (expand-region "0.10.0"))
 ;; URL: https://github.com/syl20bnr/evil-lisp-state
 
@@ -107,6 +107,7 @@ of COMMAND.
 (define-key evil-lisp-state-map "ef"  'eval-defun)
 (define-key evil-lisp-state-map "el"  'eval-last-sexp)
 (define-key evil-lisp-state-map "es"  'eval-sexp)
+(define-key evil-lisp-state-map "gs"  'elisp-slime-nav-find-elisp-thing-at-point)
 (define-key evil-lisp-state-map "h"   'sp-backward-symbol)
 (define-key evil-lisp-state-map "H"   'sp-backward-sexp)
 (define-key evil-lisp-state-map "j"   'sp-down-sexp)

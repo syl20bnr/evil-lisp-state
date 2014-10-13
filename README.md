@@ -101,6 +101,7 @@ Key Binding   | Function
 `ef`          | eval-defun
 `el`          | eval-last-sexp
 `es`          | eval-sexp
+`gs`          | go to source of symbol under point
 `h`           | sp-backward-symbol
 `H`           | sp-backward-sexp
 `i`           | evil-insert-state
