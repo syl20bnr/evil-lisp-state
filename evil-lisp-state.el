@@ -119,6 +119,7 @@ of COMMAND.
 (define-key evil-lisp-state-map "L"   'sp-forward-sexp)
 (define-key evil-lisp-state-map "m"   'sp-join-sexp)
 (define-key evil-lisp-state-map "o"   'evil-lisp-state-insert-below)
+(define-key evil-lisp-state-map "O"   'evil-open-above)
 (define-key evil-lisp-state-map "p"   'evil-paste-after)
 (define-key evil-lisp-state-map "P"   'evil-paste-before)
 (define-key evil-lisp-state-map "r"   'sp-raise-sexp)

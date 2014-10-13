@@ -113,7 +113,8 @@ Key Binding   | Function
 `l`           | sp-forward-symbol
 `L`           | sp-forward-sexp
 `m`           | sp-join-sexp (think about `merge-sexp`)
-`o`           | switch to `insert state` and add a new line below
+`o`           | sp-newline and switch to `insert state`
+`O`           | evil-open-above
 `p`           | evil-past-after
 `P`           | evil-past-before
 `r`           | sp-raise-sexp
@@ -134,7 +135,7 @@ Key Binding   | Function
 `X`           | sp-backward-delete-char
 `y`           | sp-copy-sexp
 `ny`          | sp-backward-copy-sexp
-`RET`         | sp-newline
+`RET`         | sp-newline (stay in `lisp state` see `o` to switch to `insert state`)
 `ESC`         | evil-normal-state
 
 ## Thanks
