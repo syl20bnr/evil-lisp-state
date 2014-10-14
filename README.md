@@ -48,7 +48,7 @@ both `evil` and `smartparens` to be installed.
 
 ## Configuration
 
-Example of a configuration overriding the `L` key bindings of `<tab>ormal state`
+Example of a configuration overriding the `L` key bindings of `normal state`
 in order to trigger the `lisp state`.
 
 ```elisp
@@ -68,8 +68,8 @@ Corresponding backward version of a command is performed by a common prefix
 whose value is determined by the custom variable
 `evil-lisp-state-backward-prefix`. Default value is `<tab>`.
 
-For instance, `slurping forward` is performed with `s` and the backward
-version `slurping backward` with `<tab>s`.
+For instance, `sp-forward-slurp-sexp` is performed with `s` and the backward
+version `sp-backward-slurp-sexp` with `<tab>s`.
 
 ## Intuitive navigation model
 
