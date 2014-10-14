@@ -31,17 +31,15 @@
 
 ;; Simple to grasp navigation model:
 
-;; **Next sexp on the same level**
-;; `l`: next sexp
-;; `h`: previous sexp
+;; `hjkl` behaves like in the default `normal state`.
 
-;; **Change level (depth)**
-;; `j`: go to next sexp one level down
-;; `k`: go to previous one level up
+;; **Next sexp on the same level (sibling)**
+;; - `L` next sexp
+;; - `H` previous sexp
 
-;; **Enter inside an sexp**
-;; `L`: next symbol
-;; `H`: previous symbol
+;; **Change level (parent/children)**
+;; - `J` go to next sexp one level down
+;; - `K` go to previous one level up
 
 ;; Example Configuration:
 ;; override the `L` key bindings of evil `motion state`:
