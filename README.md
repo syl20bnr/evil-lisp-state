@@ -76,11 +76,11 @@ version `slurping backward` with `<tab>s`.
 A lot of experimentation led to the following navigation model which should
 hopefully be a lot more accessible than the other models.
 
-**Next sexp on the same level**
+**Next sexp on the same level (sibling)**
 - `l` next sexp
 - `h` previous sexp
 
-**Change level (depth)**
+**Change level (parent/children)**
 - `j` go to next sexp one level down
 - `k` go to previous one level up
 
