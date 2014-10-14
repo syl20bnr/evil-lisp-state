@@ -74,19 +74,19 @@ version `slurping backward` with `<tab>s`.
 ## Intuitive navigation model
 
 A lot of experimentation led to the following navigation model which should
-hopefully be a lot more intuitive than other models.
+hopefully be a lot more accessible than the other models.
 
 **Next sexp on the same level**
-`l`: next sexp
-`h`: previous sexp
+- `l`: next sexp
+- `h`: previous sexp
 
 **Change level (depth)**
-`j`: go to next sexp one level down
-`k`: go to previous one level up
+- `j`: go to next sexp one level down
+- `k`: go to previous one level up
 
 **Enter inside an sexp**
-`L`: next symbol
-`H`: previous symbol
+- `L`: next symbol
+- `H`: previous symbol
 
 And that's it! All these commands always put the point _at the beginning_ of
 the sexp. Use the regular `e` binding to go at the end of a word.
