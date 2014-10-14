@@ -1,11 +1,11 @@
 ;;; evil-lisp-state.el --- An evil state to navigate Lisp code and modify it with smartparens
 
 ;; Copyright (C) 2014 syl20bnr
-
-;; Author: Sylvain Benner <sylvain.benner@gmail.com>
+;;
+;;;; Author: Sylvain Benner <sylvain.benner@gmail.com>
 ;; Keywords: convenience editing evil smartparens lisp mnemonic
 ;; Created: 9 Oct 2014
-;; Version: 1.6
+;; Version: 2.0
 ;; Package-Requires: ((evil "1.0.9") (smartparens "1.6.1") (expand-region "0.10.0"))
 ;; URL: https://github.com/syl20bnr/evil-lisp-state
 
@@ -29,8 +29,22 @@
 ;; Adds a new Evil state called --LISP-- (<L>) with mnemonics key bindings
 ;; to navigate Lisp code and edit the sexp tree.
 
-;; Example of a configuration overriding the `L` key bindings of
-;; evil `motion state`:
+;; Simple to grasp navigation model:
+
+;; **Next sexp on the same level**
+;; `l`: next sexp
+;; `h`: previous sexp
+
+;; **Change level (depth)**
+;; `j`: go to next sexp one level down
+;; `k`: go to previous one level up
+
+;; **Enter inside an sexp**
+;; `L`: next symbol
+;; `H`: previous symbol
+
+;; Example Configuration:
+;; override the `L` key bindings of evil `motion state`:
 
 ;; (require 'evil-lisp-state)
 ;; (define-key evil-normal-state-map "L" 'evil-lisp-state)
@@ -60,7 +74,7 @@
   :group 'emulations
   :prefix 'evil-lisp-state-)
 
-(defcustom evil-lisp-state-backward-prefix "n"
+(defcustom evil-lisp-state-backward-prefix "<tab>"
   "Prefix to execute the backward version of a command"
   :type 'string
   :group 'evil-lisp-state)
@@ -80,7 +94,7 @@ of COMMAND.
                            (concat "backward-" cmdstr)))
                 (bcmdsym (intern (format "sp-%s" bcmdstr)))
                 (bkey ,(concat evil-lisp-state-backward-prefix key)))
-           (define-key evil-lisp-state-map bkey bcmdsym)))))
+           (define-key evil-lisp-state-map (kbd bkey) bcmdsym)))))
 
 ;; key bindings
 (define-key evil-lisp-state-map "("   'evil-lisp-state-insert-left-paren)
@@ -104,22 +118,18 @@ of COMMAND.
 (evil-lisp-state-define-key     "ds"   kill-symbol t)
 (evil-lisp-state-define-key     "dw"   kill-word t)
 (define-key evil-lisp-state-map "D"   'evil-delete-line)
-(define-key evil-lisp-state-map "e$"  'evil-lisp-state-eval-sexp-end-of-line)
-(define-key evil-lisp-state-map "ef"  'eval-defun)
-(define-key evil-lisp-state-map "el"  'eval-last-sexp)
-(define-key evil-lisp-state-map "es"  'eval-sexp)
 (define-key evil-lisp-state-map "gs"  'elisp-slime-nav-find-elisp-thing-at-point)
-(define-key evil-lisp-state-map "h"   'sp-backward-symbol)
-(define-key evil-lisp-state-map "H"   'sp-backward-sexp)
-(define-key evil-lisp-state-map "j"   'sp-down-sexp)
-(define-key evil-lisp-state-map "J"   'sp-backward-down-sexp)
-(define-key evil-lisp-state-map "k"   'sp-up-sexp)
-(define-key evil-lisp-state-map "K"   'sp-backward-up-sexp)
-(define-key evil-lisp-state-map "l"   'sp-forward-symbol)
-(define-key evil-lisp-state-map "L"   'evil-lisp-state-next-sexp)
+(define-key evil-lisp-state-map "h"   'evil-lisp-state-previous-sexp)
+(define-key evil-lisp-state-map "H"   'sp-backward-symbol)
+(define-key evil-lisp-state-map "j"   'evil-lisp-state-next-sexp-down)
+(define-key evil-lisp-state-map "J"   'evil-next-visual-line)
+(define-key evil-lisp-state-map "k"   'sp-backward-up-sexp)
+(define-key evil-lisp-state-map "K"   'evil-previous-visual-line)
+(define-key evil-lisp-state-map "l"   'sp-next-sexp)
+(define-key evil-lisp-state-map "L"   'evil-lisp-state-forward-symbol)
 (define-key evil-lisp-state-map "m"   'sp-join-sexp)
-(define-key evil-lisp-state-map "o"   'evil-lisp-state-insert-below)
-(define-key evil-lisp-state-map "O"   'evil-open-above)
+(define-key evil-lisp-state-map "o"   'evil-lisp-state-insert-sexp-after)
+(define-key evil-lisp-state-map "O"   'evil-lisp-state-insert-sexp-before)
 (define-key evil-lisp-state-map "p"   'evil-paste-after)
 (define-key evil-lisp-state-map "P"   'evil-paste-before)
 (define-key evil-lisp-state-map "r"   'sp-raise-sexp)
@@ -132,10 +142,14 @@ of COMMAND.
 (define-key evil-lisp-state-map "u"   'undo-tree-undo)
 (evil-lisp-state-define-key     "U"    unwrap-sexp t)
 (define-key evil-lisp-state-map "v"   'er/expand-region)
-(define-key evil-lisp-state-map "x"   'sp-delete-char)
-(define-key evil-lisp-state-map "X"   'sp-backward-delete-char)
+(define-key evil-lisp-state-map "x$"  'evil-lisp-state-eval-sexp-end-of-line)
+(define-key evil-lisp-state-map "xf"  'eval-defun)
+(define-key evil-lisp-state-map "xl"  'eval-last-sexp)
+(define-key evil-lisp-state-map "xs"  'eval-sexp)
 (evil-lisp-state-define-key     "y"    copy-sexp t)
-(define-key evil-lisp-state-map (kbd "DEL") 'evil-backward-char)
+(define-key evil-lisp-state-map (kbd "<S-tab>") 'evil-lisp-state-previous-sexp)
+(define-key evil-lisp-state-map (kbd "<backspace>") 'sp-backward-delete-char)
+(define-key evil-lisp-state-map (kbd "<S-backspace>") 'sp-delete-char)
 (define-key evil-lisp-state-map (kbd "RET") 'sp-newline)
 (define-key evil-lisp-state-map "i"         'evil-insert-state)
 (define-key evil-lisp-state-map [escape]    'evil-normal-state)
@@ -147,22 +161,46 @@ of COMMAND.
     (evil-end-of-line)
     (eval-last-sexp nil)))
 
-(defun evil-lisp-state-next-sexp ()
-  "Go to the beginning of the next sexp of the same level."
-  (interactive)
-  (sp-forward-sexp) (sp-forward-sexp)
-  (sp-backward-sexp))
-
 (defun evil-lisp-state-insert-left-paren ()
   "Switch to insert state and insert `('"
   (interactive)
   (evil-insert-state)
   (sp-insert-pair "("))
 
-(defun evil-lisp-state-insert-below ()
-  "Mimic `o' command for lisp state."
+(defun evil-lisp-state-previous-sexp ()
+  "Go to the beginning of the previous sexp."
   (interactive)
+  (sp-previous-sexp)
+  (sp-backward-sexp))
+
+(defun evil-lisp-state-next-sexp-down ()
+  "Go to the beginning of the next sexp one level down."
+  (interactive)
+  (sp-down-sexp 2)
+  (sp-backward-up-sexp))
+
+(defun evil-lisp-state-forward-symbol ()
+  "Go to the beginning of the next symbol."
+  (interactive)
+  (let ((n (if (char-equal (char-after) ?\() 1 2)))
+    (sp-forward-symbol n)
+    (sp-backward-symbol)))
+
+(defun evil-lisp-state-insert-sexp-after ()
+  "Insert sexp after the current one."
+  (interactive)
+  (sp-up-sexp)
   (evil-insert-state)
-  (sp-newline))
+  (insert " ")
+  (sp-insert-pair "("))
+
+(defun evil-lisp-state-insert-sexp-before ()
+  "Insert sexp before the current one."
+  (interactive)
+  (sp-backward-up-sexp)
+  (evil-insert-state)
+  (insert " ")
+  (backward-char 1)
+  (sp-insert-pair "("))
 
 (provide 'evil-lisp-state)

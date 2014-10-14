@@ -16,6 +16,7 @@ basis.**
         - [Manually](#manually)
     - [Configuration](#configuration)
         - [Backward prefix](#backward-prefix)
+    - [Simple to grasp navigation model](#simple-to-grasp-navigation-model)
     - [Text selection](#text-selection)
     - [Key bindings map](#key-bindings-map)
     - [Thanks](#thanks)
@@ -47,7 +48,7 @@ both `evil` and `smartparens` to be installed.
 
 ## Configuration
 
-Example of a configuration overriding the `L` key bindings of `normal state`
+Example of a configuration overriding the `L` key bindings of `<tab>ormal state`
 in order to trigger the `lisp state`.
 
 ```elisp
@@ -65,10 +66,30 @@ M-x customize-group evil-lisp-state
 
 Corresponding backward version of a command is performed by a common prefix
 whose value is determined by the custom variable
-`evil-lisp-state-backward-prefix`. Default value is `n`.
+`evil-lisp-state-backward-prefix`. Default value is `<tab>`.
 
 For instance, `slurping forward` is performed with `s` and the backward
-version `slurping backward` with `ns`.
+version `slurping backward` with `<tab>s`.
+
+## Simple to grasp navigation model
+
+A lot of experimentation led to the following navigation model which should
+hopefully be a lot more intuitive than other models.
+
+**Next sexp on the same level**
+`l`: next sexp
+`h`: previous sexp
+
+**Change level (depth)**
+`j`: go to next sexp one level down
+`k`: go to previous one level up
+
+**Enter inside an sexp**
+`L`: next symbol
+`H`: previous symbol
+
+And that's it! All these commands always put the point _at the beginning_ of
+the sexp. Use the regular `e` binding to go at the end of a word.
 
 ## Text selection
 
@@ -78,7 +99,7 @@ It is also possible to select the whole line with `V`.
 ## Key bindings map
 
 While in `lisp state` (assume that `evil-lisp-state-backward-prefix` is set
-to default `n`):
+to default `<tab>`):
 
 Key Binding   | Function
 --------------|------------------------------------------------------------
@@ -87,54 +108,54 @@ Key Binding   | Function
 `0`           | sp-beginning-of-sexp
 `a`           | sp-absorb-sexp
 `b`           | sp-forward-barf-sexp
-`nb`          | sp-backward-barf-sexp
+`<tab>b`      | sp-backward-barf-sexp
 `c`           | sp-convolute-sexp
 `C`           | sp-comment
 `dd`          | sp-kill-hybrid-sexp
 `dx`          | sp-kill-sexp
-`ndx`         | sp-backward-kill-sexp
+`<tab>dx`     | sp-backward-kill-sexp
 `ds`          | sp-kill-symbol
-`nds`         | sp-backward-kill-symbol
+`<tab>ds`     | sp-backward-kill-symbol
 `dw`          | sp-kill-word
-`ndw`         | sp-backward-kill-word
+`<tab>dw`     | sp-backward-kill-word
 `D`           | evil-delete-line
-`e$`          | evil-lisp-state-eval-sexp-end-of-line
-`ef`          | eval-defun
-`el`          | eval-last-sexp
-`es`          | eval-sexp
 `gs`          | go to source of symbol under point
-`h`           | sp-backward-symbol
-`H`           | sp-backward-sexp
+`h`           | previous sexp at the same level
+`H`           | previous symbol
 `i`           | evil-insert-state
-`j`           | sp-down-sexp
-`J`           | sp-backward-down-sexp
-`k`           | sp-up-sexp
-`K`           | sp-backward-up-sexp
-`l`           | sp-forward-symbol
-`L`           | go to the beginning of next sexp at the same level
+`j`           | next sexp one level down
+`J`           | next visual line
+`k`           | previous sexp one level up
+`K`           | previous visual line
+`l`           | next sexp of the same level
+`L`           | next symbol
 `m`           | sp-join-sexp (think about `merge-sexp`)
-`o`           | sp-newline and switch to `insert state`
-`O`           | evil-open-above
+`o`           | insert sexp after the current one and switch to `insert state`
+`O`           | insert sexp before the current one and switch to `insert state`
 `p`           | evil-past-after
 `P`           | evil-past-before
 `r`           | sp-raise-sexp
 `R`           | sp-rewrap-sexp
 `C-r`         | undo-tree-redo
 `s`           | sp-forward-slurp-sexp
-`ns`          | sp-backward-slurp-sexp
+`<tab>s`      | sp-backward-slurp-sexp
 `S`           | sp-splice-sexp-killing-forward
-`nS`          | sp-splice-sexp-killing-backward
+`<tab>S`      | sp-splice-sexp-killing-backward
 `t`           | sp-transpose-sexp
 `T`           | sp-transpose-hybrid-sexp
 `u`           | undo-tree-undo
 `U`           | sp-unwrap-sexp
-`nU`          | sp-backward-unwrap-sexp
+`<tab>U`      | sp-backward-unwrap-sexp
 `v`           | er/expand-region
 `V`           | select whole line and switch to `visual state`
-`x`           | sp-delete-char
-`X`           | sp-backward-delete-char
+`x$`          | evil-lisp-state-eval-sexp-end-of-line
+`xf`          | eval-defun
+`xl`          | eval-last-sexp
+`xs`          | eval-sexp
 `y`           | sp-copy-sexp
-`ny`          | sp-backward-copy-sexp
+`<tab>y`      | sp-backward-copy-sexp
+`backspace`   | sp-backward-delete-char
+`S-backspace` | sp-delete-char
 `RET`         | sp-newline (stay in `lisp state` see `o` to switch to `insert state`)
 `ESC`         | evil-normal-state
 
