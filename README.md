@@ -111,7 +111,7 @@ Key Binding   | Function
 `k`           | sp-up-sexp
 `K`           | sp-backward-up-sexp
 `l`           | sp-forward-symbol
-`L`           | sp-forward-sexp
+`L`           | go to the beginning of next sexp at the same level
 `m`           | sp-join-sexp (think about `merge-sexp`)
 `o`           | sp-newline and switch to `insert state`
 `O`           | evil-open-above
