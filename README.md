@@ -152,7 +152,7 @@ Key Binding   | Function
 `x$`          | evil-lisp-state-eval-sexp-end-of-line
 `xf`          | eval-defun
 `xl`          | eval-last-sexp
-`xs`          | eval-sexp
+`xx`          | eval-sexp
 `y`           | sp-copy-sexp
 `<tab>y`      | sp-backward-copy-sexp
 `backspace`   | sp-backward-delete-char
