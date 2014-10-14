@@ -71,7 +71,7 @@ whose value is determined by the custom variable
 For instance, `slurping forward` is performed with `s` and the backward
 version `slurping backward` with `<tab>s`.
 
-## Simple to grasp navigation model
+## Intuitive navigation model
 
 A lot of experimentation led to the following navigation model which should
 hopefully be a lot more intuitive than other models.
