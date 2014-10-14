@@ -104,6 +104,7 @@ to default `<tab>`):
 Key Binding   | Function
 --------------|------------------------------------------------------------
 `(`           | switch to `insert state` and insert "("
+`%`           | evil-jump-item (use it to go to the end of sexp)
 `$`           | sp-end-of-sexp
 `0`           | sp-beginning-of-sexp
 `a`           | sp-absorb-sexp
