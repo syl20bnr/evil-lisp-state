@@ -5,7 +5,7 @@
 ;; Author: Sylvain Benner <sylvain.benner@gmail.com>
 ;; Keywords: convenience editing evil smartparens lisp mnemonic
 ;; Created: 9 Oct 2014
-;; Version: 1.5.3
+;; Version: 1.5.4
 ;; Package-Requires: ((evil "1.0.9") (smartparens "1.6.1") (expand-region "0.10.0"))
 ;; URL: https://github.com/syl20bnr/evil-lisp-state
 
@@ -83,7 +83,7 @@ of COMMAND.
            (define-key evil-lisp-state-map bkey bcmdsym)))))
 
 ;; key bindings
-(define-key evil-lisp-state-map "("   (lambda () (interactive) (evil-insert "(")))
+(define-key evil-lisp-state-map "("   'evil-lisp-state-insert-left-paren)
 (define-key evil-lisp-state-map "1"   'digit-argument)
 (define-key evil-lisp-state-map "2"   'digit-argument)
 (define-key evil-lisp-state-map "3"   'digit-argument)
@@ -146,6 +146,12 @@ of COMMAND.
   (save-excursion
     (evil-end-of-line)
     (eval-last-sexp nil)))
+
+(defun evil-lisp-state-insert-left-paren ()
+  "Switch to insert state and insert `('"
+  (interactive)
+  (evil-insert-state)
+  (sp-insert-pair "("))
 
 (defun evil-lisp-state-insert-below ()
   "Mimic `o' command for lisp state."
