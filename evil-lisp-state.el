@@ -189,18 +189,22 @@ of COMMAND.
 (defun evil-lisp-state-insert-sexp-after ()
   "Insert sexp after the current one."
   (interactive)
+  (if (char-equal (char-after) ?\() (evil-lisp-state-forward-symbol))
   (sp-up-sexp)
   (evil-insert-state)
-  (insert " ")
+  (sp-newline)
   (sp-insert-pair "("))
 
 (defun evil-lisp-state-insert-sexp-before ()
   "Insert sexp before the current one."
   (interactive)
-  (sp-backward-up-sexp)
+  (if (char-equal (char-after) ?\() (evil-lisp-state-forward-symbol))
+  (sp-backward-sexp)
   (evil-insert-state)
-  (insert " ")
-  (backward-char 1)
-  (sp-insert-pair "("))
+  (sp-newline)
+  (evil-previous-visual-line)
+  (evil-end-of-line)
+  (sp-insert-pair "(")
+  (indent-for-tab-command))
 
 (provide 'evil-lisp-state)
