@@ -5,7 +5,7 @@
 ;; Author: Sylvain Benner <sylvain.benner@gmail.com>
 ;; Keywords: convenience editing evil smartparens lisp mnemonic
 ;; Created: 9 Oct 2014
-;; Version: 1.5.4
+;; Version: 1.6
 ;; Package-Requires: ((evil "1.0.9") (smartparens "1.6.1") (expand-region "0.10.0"))
 ;; URL: https://github.com/syl20bnr/evil-lisp-state
 
@@ -116,7 +116,7 @@ of COMMAND.
 (define-key evil-lisp-state-map "k"   'sp-up-sexp)
 (define-key evil-lisp-state-map "K"   'sp-backward-up-sexp)
 (define-key evil-lisp-state-map "l"   'sp-forward-symbol)
-(define-key evil-lisp-state-map "L"   'sp-forward-sexp)
+(define-key evil-lisp-state-map "L"   'evil-lisp-state-next-sexp)
 (define-key evil-lisp-state-map "m"   'sp-join-sexp)
 (define-key evil-lisp-state-map "o"   'evil-lisp-state-insert-below)
 (define-key evil-lisp-state-map "O"   'evil-open-above)
@@ -146,6 +146,12 @@ of COMMAND.
   (save-excursion
     (evil-end-of-line)
     (eval-last-sexp nil)))
+
+(defun evil-lisp-state-next-sexp ()
+  "Go to the beginning of the next sexp of the same level."
+  (interactive)
+  (sp-forward-sexp) (sp-forward-sexp)
+  (sp-backward-sexp))
 
 (defun evil-lisp-state-insert-left-paren ()
   "Switch to insert state and insert `('"
