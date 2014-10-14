@@ -5,7 +5,7 @@
 ;;;; Author: Sylvain Benner <sylvain.benner@gmail.com>
 ;; Keywords: convenience editing evil smartparens lisp mnemonic
 ;; Created: 9 Oct 2014
-;; Version: 2.0.1
+;; Version: 3.0
 ;; Package-Requires: ((evil "1.0.9") (smartparens "1.6.1") (expand-region "0.10.0"))
 ;; URL: https://github.com/syl20bnr/evil-lisp-state
 
@@ -119,14 +119,16 @@ of COMMAND.
 (evil-lisp-state-define-key     "dw"   kill-word t)
 (define-key evil-lisp-state-map "D"   'evil-delete-line)
 (define-key evil-lisp-state-map "gs"  'elisp-slime-nav-find-elisp-thing-at-point)
-(define-key evil-lisp-state-map "h"   'evil-lisp-state-previous-sexp)
-(define-key evil-lisp-state-map "H"   'sp-backward-symbol)
-(define-key evil-lisp-state-map "j"   'evil-lisp-state-next-sexp-down)
-(define-key evil-lisp-state-map "J"   'evil-next-visual-line)
-(define-key evil-lisp-state-map "k"   'sp-backward-up-sexp)
-(define-key evil-lisp-state-map "K"   'evil-previous-visual-line)
-(define-key evil-lisp-state-map "l"   'sp-next-sexp)
-(define-key evil-lisp-state-map "L"   'evil-lisp-state-forward-symbol)
+(define-key evil-lisp-state-map "h"   'evil-backward-char)
+(define-key evil-lisp-state-map (kbd "C-h") 'sp-backward-sexp)
+(define-key evil-lisp-state-map "H"   'evil-lisp-state-previous-sexp)
+(define-key evil-lisp-state-map "j"   'evil-next-visual-line)
+(define-key evil-lisp-state-map "J"   'evil-lisp-state-next-sexp-down)
+(define-key evil-lisp-state-map "k"   'evil-previous-visual-line)
+(define-key evil-lisp-state-map "K"   'sp-backward-up-sexp)
+(define-key evil-lisp-state-map "l"   'evil-forward-char)
+(define-key evil-lisp-state-map (kbd "C-l") 'evil-lisp-state-forward-symbol)
+(define-key evil-lisp-state-map "L"   'sp-next-sexp)
 (define-key evil-lisp-state-map "m"   'sp-join-sexp)
 (define-key evil-lisp-state-map "o"   'evil-lisp-state-insert-sexp-after)
 (define-key evil-lisp-state-map "O"   'evil-lisp-state-insert-sexp-before)
