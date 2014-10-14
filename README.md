@@ -87,7 +87,7 @@ hopefully be a lot more accessible than the other models.
 - `K` go to previous one level up
 
 And that's it! All these commands always put the point _at the beginning_ of
-the sexp. Use the regular `e` binding to go at the end of a word.
+the sexp.
 
 ## Text selection
 
