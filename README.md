@@ -105,7 +105,8 @@ Key Binding   | Function
 `%`           | evil-jump-item (use it to go to the end of sexp)
 `$`           | sp-end-of-sexp
 `0`           | sp-beginning-of-sexp
-`a`           | sp-absorb-sexp
+`a`           | evil-append
+`A`           | sp-absorb-sexp
 `b`           | sp-forward-barf-sexp
 `<tab>b`      | sp-backward-barf-sexp
 `c`           | sp-convolute-sexp
