@@ -69,6 +69,7 @@
   :group 'emulations
   :prefix 'evil-lisp-state-)
 
+;;;###autoload
 (defcustom evil-lisp-state-backward-prefix "<tab>"
   "Prefix to execute the backward version of a command"
   :type 'string
