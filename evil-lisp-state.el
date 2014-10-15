@@ -5,7 +5,7 @@
 ;;;; Author: Sylvain Benner <sylvain.benner@gmail.com>
 ;; Keywords: convenience editing evil smartparens lisp mnemonic
 ;; Created: 9 Oct 2014
-;; Version: 3.0
+;; Version: 3.1
 ;; Package-Requires: ((evil "1.0.9") (smartparens "1.6.1") (expand-region "0.10.0"))
 ;; URL: https://github.com/syl20bnr/evil-lisp-state
 
@@ -62,10 +62,7 @@
   :enable (motion)
   :cursor (bar . 2)
   ;; force smartparens mode
-  (progn
-    (if (evil-lisp-state-p) (smartparens-mode))
-    (setq sp-navigate-consider-symbols nil
-          sp-navigate-reindent-after-up nil)))
+  (if (evil-lisp-state-p) (smartparens-mode)))
 
 (defgroup evil-lisp-state nil
   "Evil lisp state."
