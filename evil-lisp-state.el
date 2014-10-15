@@ -5,7 +5,7 @@
 ;;;; Author: Sylvain Benner <sylvain.benner@gmail.com>
 ;; Keywords: convenience editing evil smartparens lisp mnemonic
 ;; Created: 9 Oct 2014
-;; Version: 3.1
+;; Version: 3.2
 ;; Package-Requires: ((evil "1.0.9") (smartparens "1.6.1") (expand-region "0.10.0"))
 ;; URL: https://github.com/syl20bnr/evil-lisp-state
 
@@ -131,15 +131,16 @@ of COMMAND.
 (define-key evil-lisp-state-map "p"   'evil-paste-after)
 (define-key evil-lisp-state-map "P"   'evil-paste-before)
 (define-key evil-lisp-state-map "r"   'sp-raise-sexp)
-(define-key evil-lisp-state-map "R"   'sp-rewrap-sexp)
 (define-key evil-lisp-state-map (kbd "C-r") 'undo-tree-redo)
 (evil-lisp-state-define-key     "s"    forward-slurp-sexp t)
 (evil-lisp-state-define-key     "S"    splice-sexp-killing-forward t)
 (define-key evil-lisp-state-map "t"   'sp-transpose-sexp)
 (define-key evil-lisp-state-map "T"   'sp-transpose-hybrid-sexp)
 (define-key evil-lisp-state-map "u"   'undo-tree-undo)
-(evil-lisp-state-define-key     "U"    unwrap-sexp t)
 (define-key evil-lisp-state-map "v"   'er/expand-region)
+(define-key evil-lisp-state-map "w"   '(lambda (&optional arg) (interactive "P")
+                                         (sp-wrap-with-pair "(")))
+(evil-lisp-state-define-key     "W"    unwrap-sexp t)
 (define-key evil-lisp-state-map "x$"  'evil-lisp-state-eval-sexp-end-of-line)
 (define-key evil-lisp-state-map "xf"  'eval-defun)
 (define-key evil-lisp-state-map "xl"  'eval-last-sexp)
