@@ -153,7 +153,8 @@ Key Binding   | Function
 `xf`          | eval-defun
 `xl`          | eval-last-sexp
 `xx`          | eval-sexp
-`y`           | sp-copy-sexp
+`y`           | evil-yank
+`Y`           | sp-copy-sexp
 `<tab>y`      | sp-backward-copy-sexp
 `backspace`   | sp-backward-delete-char
 `S-backspace` | sp-delete-char
