@@ -101,7 +101,8 @@ to default `<tab>`):
 
 Key Binding   | Function
 --------------|------------------------------------------------------------
-`(`           | switch to `insert state` and insert "("
+`(`           | insert sibling before sexp and switch to `insert state`
+`)`           | insert sibling after sexp and switch to `insert state`
 `%`           | evil-jump-item (use it to go to the end of sexp)
 `$`           | sp-end-of-sexp
 `0`           | sp-beginning-of-sexp
