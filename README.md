@@ -131,8 +131,8 @@ Key Binding   | Function
 `l`           | next char
 `L`           | next sexp of the same level
 `m`           | sp-join-sexp (think about `merge-sexp`)
-`o`           | insert sexp after on the same level and switch to `insert state`
-`O`           | insert sexp before on the same level and switch to `insert state`
+`o`           | evil-insert-below
+`O`           | evil-insert-above
 `p`           | evil-past-after
 `P`           | evil-past-before
 `r`           | sp-raise-sexp
