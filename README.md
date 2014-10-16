@@ -146,8 +146,6 @@ Key Binding   | Function
 `T`           | sp-transpose-hybrid-sexp
 `u`           | *undo-tree-undo
 `<tab>U`      | sp-backward-unwrap-sexp
-`v`           | er/expand-region
-`V`           | *select whole line and switch to `visual state`
 `w`           | wrap sexp
 `W`           | unwrap sexp
 `x$`          | evil-lisp-state-eval-sexp-end-of-line
