@@ -96,9 +96,10 @@ It is also possible to select the whole line with `V`.
 
 ## Key bindings map
 
-While in `lisp state` (assume that `evil-lisp-state-backward-prefix` is set
-to default `<tab>`, `*` means that the binding is the evil regular binding for
-this command):
+In this table:
+- we assume that `evil-lisp-state-backward-prefix` is set
+to default `<tab>`
+- `*` means that the binding is the evil regular binding for this command
 
 Key Binding   | Function
 --------------|------------------------------------------------------------
