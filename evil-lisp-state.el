@@ -5,7 +5,7 @@
 ;;;; Author: Sylvain Benner <sylvain.benner@gmail.com>
 ;; Keywords: convenience editing evil smartparens lisp mnemonic
 ;; Created: 9 Oct 2014
-;; Version: 3.2
+;; Version: 3.3
 ;; Package-Requires: ((evil "1.0.9") (smartparens "1.6.1") (expand-region "0.10.0"))
 ;; URL: https://github.com/syl20bnr/evil-lisp-state
 
