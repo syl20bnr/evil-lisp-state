@@ -136,7 +136,8 @@ Key Binding   | Function
 `O`           | *evil-insert-above
 `p`           | *evil-past-after
 `P`           | *evil-past-before
-`r`           | sp-raise-sexp
+`r`           | *evil-replace
+`R`           | sp-raise-sexp
 `C-r`         | *undo-tree-redo
 `s`           | sp-forward-slurp-sexp
 `<tab>s`      | sp-backward-slurp-sexp
