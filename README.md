@@ -16,9 +16,11 @@ basis.**
         - [Manually](#manually)
     - [Configuration](#configuration)
         - [Backward prefix](#backward-prefix)
-    - [Simple to grasp navigation model](#simple-to-grasp-navigation-model)
-    - [Text selection](#text-selection)
-    - [Key bindings map](#key-bindings-map)
+    - [Philosophy](#philosophy)
+    - [Intuitive navigation model](#intuitive-navigation-model)
+    - [Key bindings maps](#key-bindings-maps)
+        - [Regular normal state bindings](#regular-normal-state-bindings)
+        - [Lisp specific bindings](#lisp-specific-bindings)
     - [Thanks](#thanks)
 
 <!-- markdown-toc end -->
@@ -71,6 +73,19 @@ whose value is determined by the custom variable
 For instance, `sp-forward-slurp-sexp` is performed with `s` and the backward
 version `sp-backward-slurp-sexp` with `<tab>s`.
 
+## Philosophy
+
+`evil-lisp-state` goal is to replace the `normal state` in lisp buffers so
+_you should not have the need_ to switch back and forth `normal state` and
+`lisp state`. In the case you do, please fill an issue.
+
+_Note that some mechanism will be provided in order to optional have
+`insert state` to go back to `lisp state` when pressing `ESC`. Stay tuned._
+
+To achieve this goal, this mode tries to keep the useful commands from the
+`normal state` and add new commands (often with `shift` modifier) for
+manipulating the data structure.
+
 ## Intuitive navigation model
 
 A lot of experimentation led to the following navigation model which should
@@ -89,78 +104,78 @@ hopefully be a lot more accessible than the other models.
 And that's it! All these commands always put the point _at the beginning_ of
 the sexp.
 
-## Text selection
+## Key bindings maps
 
-Text selection is done with [expand-region][expand-link] by pressing `v`.
-It is also possible to select the whole line with `V`.
+### Regular normal state bindings
 
-## Key bindings map
+Key Binding   | Function
+--------------|------------------------------------------------------------
+`a`           | evil-append
+`c`           | evil-change
+`d`           | evil-delete
+`h`           | next char
+`i`           | evil-insert-state
+`j`           | next visual line
+`k`           | previous visual line
+`l`           | next char
+`o`           | evil-insert-below
+`O`           | evil-insert-above
+`p`           | evil-past-after
+`P`           | evil-past-before
+`r`           | evil-replace
+`C-r`         | undo-tree-redo
+`u`           | undo-tree-undo
+`x`           | evil-delete-char
+`X`           | evil-delete-backward-char
+`y`           | evil-yank
+`ESC`         | evil-normal-state
 
-In this table:
-- we assume that `evil-lisp-state-backward-prefix` is set
-to default `<tab>`
-- `*` means that the binding is the evil regular binding for this command
+### Lisp specific bindings
+
+_In this table we assume that `evil-lisp-state-backward-prefix` is set to
+default `<tab>`_
 
 Key Binding   | Function
 --------------|------------------------------------------------------------
 `(`           | insert sibling before sexp and switch to `insert state`
 `)`           | insert sibling after sexp and switch to `insert state`
-`%`           | *evil-jump-item (use it to go to the end of sexp)
 `$`           | sp-end-of-sexp
 `0`           | sp-beginning-of-sexp
-`a`           | *evil-append
 `A`           | sp-absorb-sexp
 `b`           | sp-forward-barf-sexp
 `<tab>b`      | sp-backward-barf-sexp
-`c`           | sp-convolute-sexp
-`C`           | sp-comment
-`dd`          | sp-kill-hybrid-sexp
-`dx`          | sp-kill-sexp
-`<tab>dx`     | sp-backward-kill-sexp
-`ds`          | sp-kill-symbol
-`<tab>ds`     | sp-backward-kill-symbol
-`dw`          | sp-kill-word
-`<tab>dw`     | sp-backward-kill-word
-`D`           | *evil-delete-line
+`C`           | sp-convolute-sexp
+`Dd`          | sp-kill-hybrid-sexp
+`Dx`          | sp-kill-sexp
+`<tab>Dx`     | sp-backward-kill-sexp
+`Ds`          | sp-kill-symbol
+`<tab>Ds`     | sp-backward-kill-symbol
+`Dw`          | sp-kill-word
+`<tab>Dw`     | sp-backward-kill-word
+`E$`          | evil-lisp-state-eval-sexp-end-of-line
+`Ee`          | eval-last-sexp
+`Ef`          | eval-defun
 `gs`          | go to source of symbol under point
-`h`           | *next char
+`gt`          | sp-transpose-sexp
+`gT`          | sp-transpose-hybrid-sexp
 `H`           | previous sexp at the same level
-`i`           | *evil-insert-state
-`j`           | *next visual line
 `J`           | next sexp one level down
-`k`           | *previous visual line
 `K`           | previous sexp one level up
-`l`           | *next char
 `L`           | next sexp of the same level
-`m`           | sp-join-sexp (think about `merge-sexp`)
-`o`           | *evil-insert-below
-`O`           | *evil-insert-above
-`p`           | *evil-past-after
-`P`           | *evil-past-before
-`r`           | *evil-replace
+`M`           | sp-join-sexp (think about `merge-sexp`)
 `R`           | sp-raise-sexp
-`C-r`         | *undo-tree-redo
 `s`           | sp-forward-slurp-sexp
 `<tab>s`      | sp-backward-slurp-sexp
 `S`           | sp-splice-sexp-killing-forward
 `<tab>S`      | sp-splice-sexp-killing-backward
-`t`           | sp-transpose-sexp
-`T`           | sp-transpose-hybrid-sexp
-`u`           | *undo-tree-undo
-`<tab>U`      | sp-backward-unwrap-sexp
 `w`           | wrap sexp
 `W`           | unwrap sexp
-`x$`          | evil-lisp-state-eval-sexp-end-of-line
-`xf`          | eval-defun
-`xl`          | eval-last-sexp
-`xx`          | eval-sexp
-`y`           | *evil-yank
+`<tab>W`      | sp-backward-unwrap-sexp
 `Y`           | sp-copy-sexp
 `<tab>y`      | sp-backward-copy-sexp
 `backspace`   | sp-backward-delete-char
 `S-backspace` | sp-delete-char
 `RET`         | sp-newline (stay in `lisp state` see `o` to switch to `insert state`)
-`ESC`         | *evil-normal-state
 
 ## Thanks
 
@@ -171,4 +186,3 @@ have been a lot harder to implement.
 [evil-link]: https://gitorious.org/evil/pages/Home
 [smartparens-link]: https://github.com/Fuco1/smartparens/wiki
 [melpa-link]: http://melpa.milkbox.net
-[expand-link]: https://github.com/magnars/expand-region.el
