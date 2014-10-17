@@ -76,11 +76,11 @@ version `sp-backward-slurp-sexp` with `<tab>s`.
 ## Philosophy
 
 `evil-lisp-state` goal is to replace the `normal state` in lisp buffers so
-_you should not have the need_ to switch back and forth `normal state` and
-`lisp state`. In the case you do, please fill an issue.
+_you should not have the need_ to switch back and forth  between `normal state`
+and `lisp state`. In the case you do, please fill an issue.
 
-_Note that some mechanism will be provided in order to optional have
-`insert state` to go back to `lisp state` when pressing `ESC`. Stay tuned._
+_Note that some mechanism will be provided in order to  have `insert state`
+to optionally go back to `lisp state` when pressing `ESC`. Stay tuned._
 
 To achieve this goal, this mode tries to keep the useful commands from the
 `normal state` and add new commands (often with `shift` modifier) for
@@ -143,15 +143,15 @@ Key Binding   | Function
 `0`           | sp-beginning-of-sexp
 `A`           | sp-absorb-sexp
 `b`           | sp-forward-barf-sexp
-`<tab>b`      | sp-backward-barf-sexp
+`<tab> b`     | sp-backward-barf-sexp
 `C`           | sp-convolute-sexp
 `Dd`          | sp-kill-hybrid-sexp
 `Dx`          | sp-kill-sexp
-`<tab>Dx`     | sp-backward-kill-sexp
+`<tab> Dx`    | sp-backward-kill-sexp
 `Ds`          | sp-kill-symbol
-`<tab>Ds`     | sp-backward-kill-symbol
+`<tab> Ds`    | sp-backward-kill-symbol
 `Dw`          | sp-kill-word
-`<tab>Dw`     | sp-backward-kill-word
+`<tab> Dw`    | sp-backward-kill-word
 `E$`          | evil-lisp-state-eval-sexp-end-of-line
 `Ee`          | eval-last-sexp
 `Ef`          | eval-defun
@@ -165,14 +165,14 @@ Key Binding   | Function
 `M`           | sp-join-sexp (think about `merge-sexp`)
 `R`           | sp-raise-sexp
 `s`           | sp-forward-slurp-sexp
-`<tab>s`      | sp-backward-slurp-sexp
+`<tab> s`     | sp-backward-slurp-sexp
 `S`           | sp-splice-sexp-killing-forward
-`<tab>S`      | sp-splice-sexp-killing-backward
+`<tab> S`     | sp-splice-sexp-killing-backward
 `w`           | wrap sexp
 `W`           | unwrap sexp
-`<tab>W`      | sp-backward-unwrap-sexp
+`<tab> W`     | sp-backward-unwrap-sexp
 `Y`           | sp-copy-sexp
-`<tab>y`      | sp-backward-copy-sexp
+`<tab> y`     | sp-backward-copy-sexp
 `backspace`   | sp-backward-delete-char
 `S-backspace` | sp-delete-char
 `RET`         | sp-newline (stay in `lisp state` see `o` to switch to `insert state`)
