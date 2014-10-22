@@ -172,6 +172,7 @@ of COMMAND.
 (define-key evil-lisp-state-map (kbd "<backspace>") 'sp-backward-delete-char)
 (define-key evil-lisp-state-map (kbd "<S-backspace>") 'sp-delete-char)
 (define-key evil-lisp-state-map (kbd "RET") 'evil-lisp-state-indent-next-line)
+(define-key evil-lisp-state-map (kbd "<S-return>") 'evil-lisp-state-new-line-insert-state)
 
 (defun evil-lisp-state-eval-sexp-end-of-line ()
   "Evaluate the last sexp at the end of the current line."
@@ -234,5 +235,11 @@ of COMMAND.
   (interactive)
   (join-line 1)
   (sp-newline))
+
+(defun evil-lisp-state-new-line-insert-state ()
+  "Insert new line char and switch to insert mode."
+  (interactive)
+  (sp-newline)
+  (evil-insert-state))
 
 (provide 'evil-lisp-state)

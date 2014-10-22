@@ -173,6 +173,7 @@ Key Binding   | Function
 `backspace`   | sp-backward-delete-char
 `S-backspace` | sp-delete-char
 `RET`         | indent next line
+`S-RET`       | insert new line char and switch to `insert state`
 
 ## Thanks
 
