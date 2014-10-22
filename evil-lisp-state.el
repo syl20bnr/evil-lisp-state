@@ -123,6 +123,8 @@ of COMMAND.
 (define-key evil-lisp-state-map "c"   'evil-change)
 (define-key evil-lisp-state-map "d"   'evil-delete)
 (define-key evil-lisp-state-map "h"   'evil-backward-char)
+(define-key evil-lisp-state-map "i"   'evil-insert-state)
+(define-key evil-lisp-state-map "I"   'evil-insert-line)
 (define-key evil-lisp-state-map "j"   'evil-next-visual-line)
 (define-key evil-lisp-state-map "k"   'evil-previous-visual-line)
 (define-key evil-lisp-state-map "l"   'evil-forward-char)
@@ -136,7 +138,6 @@ of COMMAND.
 (define-key evil-lisp-state-map "x"   'evil-delete-char)
 (define-key evil-lisp-state-map "X"   'evil-delete-backward-char)
 (define-key evil-lisp-state-map "y"   'evil-yank)
-(define-key evil-lisp-state-map "i"         'evil-insert-state)
 (define-key evil-lisp-state-map [escape]    'evil-normal-state)
 ;; lisp specific key bindings
 (define-key evil-lisp-state-map "("   'evil-lisp-state-insert-sexp-before)
