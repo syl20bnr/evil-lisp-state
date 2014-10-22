@@ -209,7 +209,7 @@ of COMMAND.
   "Insert sexp after the current one."
   (interactive)
   (let ((sp-navigate-consider-symbols nil))
-    (if (char-equal (char-after) ?\() (evil-lisp-state-forward-symbol))
+    (if (char-equal (char-after) ?\() (forward-char))
     (sp-up-sexp)
     (evil-insert-state)
     (sp-newline)
@@ -219,12 +219,13 @@ of COMMAND.
   "Insert sexp before the current one."
   (interactive)
   (let ((sp-navigate-consider-symbols nil))
-    (if (char-equal (char-after) ?\() (evil-lisp-state-forward-symbol))
+    (if (char-equal (char-after) ?\() (forward-char))
     (sp-backward-sexp)
     (evil-insert-state)
     (sp-newline)
     (evil-previous-visual-line)
     (evil-end-of-line)
+    (insert " ")
     (sp-insert-pair "(")
     (indent-for-tab-command)))
 
