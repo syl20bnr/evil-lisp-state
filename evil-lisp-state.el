@@ -171,7 +171,7 @@ of COMMAND.
 (evil-lisp-state-define-key     "Y"    copy-sexp t)
 (define-key evil-lisp-state-map (kbd "<backspace>") 'sp-backward-delete-char)
 (define-key evil-lisp-state-map (kbd "<S-backspace>") 'sp-delete-char)
-(define-key evil-lisp-state-map (kbd "RET") 'sp-newline)
+(define-key evil-lisp-state-map (kbd "RET") 'evil-lisp-state-indent-next-line)
 
 (defun evil-lisp-state-eval-sexp-end-of-line ()
   "Evaluate the last sexp at the end of the current line."
@@ -227,5 +227,11 @@ of COMMAND.
     (evil-end-of-line)
     (sp-insert-pair "(")
     (indent-for-tab-command)))
+
+(defun evil-lisp-state-indent-next-line ()
+  "Indent line and go the next visual line."
+  (interactive)
+  (join-line 1)
+  (sp-newline))
 
 (provide 'evil-lisp-state)

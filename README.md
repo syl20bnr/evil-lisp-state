@@ -111,6 +111,7 @@ Key Binding   | Function
 `d`           | evil-delete
 `h`           | next char
 `i`           | evil-insert-state
+`I`           | evil-insert-line
 `j`           | next visual line
 `k`           | previous visual line
 `l`           | next char
@@ -171,7 +172,7 @@ Key Binding   | Function
 `<tab> y`     | sp-backward-copy-sexp
 `backspace`   | sp-backward-delete-char
 `S-backspace` | sp-delete-char
-`RET`         | sp-newline (stay in `lisp state` see `o` to switch to `insert state`)
+`RET`         | indent next line
 
 ## Thanks
 
