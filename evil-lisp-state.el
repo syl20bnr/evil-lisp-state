@@ -5,7 +5,7 @@
 ;;;; Author: Sylvain Benner <sylvain.benner@gmail.com>
 ;; Keywords: convenience editing evil smartparens lisp mnemonic
 ;; Created: 9 Oct 2014
-;; Version: 4.1
+;; Version: 4.1.1
 ;; Package-Requires: ((evil "1.0.9") (smartparens "1.6.1"))
 ;; URL: https://github.com/syl20bnr/evil-lisp-state
 
@@ -86,7 +86,8 @@
   :group 'emulations
   :prefix 'evil-lisp-state-)
 
-;;;###autoload
+(defvar evil-lisp-state-backward-prefix "<tab>"
+  "Prefix to execute the backward version of a command")
 (defcustom evil-lisp-state-backward-prefix "<tab>"
   "Prefix to execute the backward version of a command"
   :type 'string
@@ -243,3 +244,5 @@ of COMMAND.
   (evil-insert-state))
 
 (provide 'evil-lisp-state)
+
+;;; evil-lisp-state.el ends here
