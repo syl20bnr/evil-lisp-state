@@ -183,4 +183,4 @@ have been a lot harder to implement.
 
 [evil-link]: https://gitorious.org/evil/pages/Home
 [smartparens-link]: https://github.com/Fuco1/smartparens/wiki
-[melpa-link]: http://melpa.milkbox.net
+[melpa-link]: http://melpa.org/

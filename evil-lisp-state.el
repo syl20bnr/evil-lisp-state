@@ -2,7 +2,7 @@
 
 ;; Copyright (C) 2014 syl20bnr
 ;;
-;;;; Author: Sylvain Benner <sylvain.benner@gmail.com>
+;; Author: Sylvain Benner <sylvain.benner@gmail.com>
 ;; Keywords: convenience editing evil smartparens lisp mnemonic
 ;; Created: 9 Oct 2014
 ;; Version: 4.1.1
