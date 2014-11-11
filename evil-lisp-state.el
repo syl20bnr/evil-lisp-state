@@ -5,7 +5,7 @@
 ;; Author: Sylvain Benner <sylvain.benner@gmail.com>
 ;; Keywords: convenience editing evil smartparens lisp mnemonic
 ;; Created: 9 Oct 2014
-;; Version: 4.1.1
+;; Version: 4.2.0
 ;; Package-Requires: ((evil "1.0.9") (smartparens "1.6.1"))
 ;; URL: https://github.com/syl20bnr/evil-lisp-state
 
@@ -86,8 +86,6 @@
   :group 'emulations
   :prefix 'evil-lisp-state-)
 
-(defvar evil-lisp-state-backward-prefix "<tab>"
-  "Prefix to execute the backward version of a command")
 (defcustom evil-lisp-state-backward-prefix "<tab>"
   "Prefix to execute the backward version of a command"
   :type 'string
@@ -99,6 +97,7 @@
 If BACKWARD is not nil then a binding is also created for backward version
 of COMMAND.
  The backward binding is prepended with `evil-lisp-state-backward-prefix'"
+  (let (backward-prefix evil-lisp-state-backward-prefix)
   `(let* ((cmdstr ,(symbol-name command))
           (cmdsym (intern (format "sp-%s" cmdstr))))
      (define-key evil-lisp-state-map ,key cmdsym)
@@ -107,8 +106,8 @@ of COMMAND.
                              (replace-regexp-in-string "forward" "backward" cmdstr)
                            (concat "backward-" cmdstr)))
                 (bcmdsym (intern (format "sp-%s" bcmdstr)))
-                (bkey ,(concat evil-lisp-state-backward-prefix key)))
-           (define-key evil-lisp-state-map (kbd bkey) bcmdsym)))))
+                (bkey ,(concat backward-prefix key)))
+           (define-key evil-lisp-state-map (kbd bkey) bcmdsym))))))
 
 ;; regular normal state key bindings
 (define-key evil-lisp-state-map "1"   'digit-argument)
