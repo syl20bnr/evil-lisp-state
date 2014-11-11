@@ -107,6 +107,7 @@ the sexp.
 Key Binding   | Function
 --------------|------------------------------------------------------------
 `a`           | evil-append
+`A`           | evil-append-line
 `c`           | evil-change
 `d`           | evil-delete
 `h`           | next char
@@ -138,8 +139,8 @@ Key Binding   | Function
 `)`           | insert sibling after sexp and switch to `insert state`
 `$`           | sp-end-of-sexp
 `0`           | sp-beginning-of-sexp
-`A`           | sp-absorb-sexp
 `b`           | sp-forward-barf-sexp
+`B`           | sp-absorb-sexp
 `<tab> b`     | sp-backward-barf-sexp
 `C`           | sp-convolute-sexp
 `Dd`          | sp-kill-hybrid-sexp
