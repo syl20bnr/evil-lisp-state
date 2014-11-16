@@ -5,7 +5,7 @@
 ;; Author: Sylvain Benner <sylvain.benner@gmail.com>
 ;; Keywords: convenience editing evil smartparens lisp mnemonic
 ;; Created: 9 Oct 2014
-;; Version: 4.2.0
+;; Version: 4.2.1
 ;; Package-Requires: ((evil "1.0.9") (smartparens "1.6.1"))
 ;; URL: https://github.com/syl20bnr/evil-lisp-state
 
@@ -97,7 +97,7 @@
 If BACKWARD is not nil then a binding is also created for backward version
 of COMMAND.
  The backward binding is prepended with `evil-lisp-state-backward-prefix'"
-  (let (backward-prefix evil-lisp-state-backward-prefix)
+  (let ((backward-prefix evil-lisp-state-backward-prefix))
   `(let* ((cmdstr ,(symbol-name command))
           (cmdsym (intern (format "sp-%s" cmdstr))))
      (define-key evil-lisp-state-map ,key cmdsym)
