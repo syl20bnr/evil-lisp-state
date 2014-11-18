@@ -69,6 +69,9 @@ whose value is determined by the custom variable
 For instance, `sp-forward-slurp-sexp` is performed with `s` and the backward
 version `sp-backward-slurp-sexp` with `<tab>s`.
 
+**Note:** The variable `evil-lisp-state-backward-prefix` must be set before
+requiring `evil-lisp-state`.
+
 ## Philosophy
 
 `evil-lisp-state` goal is to replace the `normal state` in lisp buffers so
