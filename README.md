@@ -1,4 +1,5 @@
 # evil-lisp-state
+[![MELPA](http://melpa.org/packages/evil-lisp-state-badge.svg)](http://melpa.org/#/evil-lisp-state)
 
 Adds a new [evil][evil-link] state to navigate lisp code and edit sexp trees
 using [smartparens][smartparens-link] and mnemonic key bindings.
