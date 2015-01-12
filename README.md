@@ -48,7 +48,7 @@ To execute a command while in normal state, the evil-leader is used.
 By default, the prefix for each command is `<leader> m`.
 Each command when executed set the current state to `lisp state`.
 
-By example:
+Examples:
 
 - to slurp three times while in normal state:
 
@@ -62,18 +62,18 @@ By example:
 
 ### hjkl
 
-Evil Lisp state binds the most common used commands on hjkl:
+Evil Lisp state binds the most common commands on hjkl:
 
-Key Binding   | Function
---------------|------------------------------------------------------------
-<kbd>h</kbd>  | previous symbol
-<kbd>H</kbd>  | forward barf sexp (move the current symbol or sexp outside)
-<kbd>j</kbd>  | next closing parenthesis
-<kbd>J</kbd>  | wrap symbol with parenthesis (down one level)
-<kbd>k</kbd>  | previous opening parenthesis
-<kbd>K</kbd>  | unwrap current sexp (up one level)
-<kbd>l</kbd>  | next symbol
-<kbd>L</kbd>  | forward slurp sexp (move next outside sexp into current one)
+Key Binding                | Function
+---------------------------|------------------------------------------------------------
+<kbd>\<leader\> m h</kbd>  | previous symbol
+<kbd>\<leader\> m H</kbd>  | forward barf sexp (move the current symbol or sexp outside)
+<kbd>\<leader\> m j</kbd>  | next closing parenthesis
+<kbd>\<leader\> m J</kbd>  | wrap symbol with parenthesis (down one level)
+<kbd>\<leader\> m k</kbd>  | previous opening parenthesis
+<kbd>\<leader\> m K</kbd>  | unwrap current sexp (up one level)
+<kbd>\<leader\> m l</kbd>  | next symbol
+<kbd>\<leader\> m L</kbd>  | forward slurp sexp (move next outside sexp into current one)
 
 So with just hjkl keys you can:
 - navigate between symbols and sexps
@@ -81,44 +81,40 @@ So with just hjkl keys you can:
 - wrap and unwrap symbols and sexps
 
 **Notes:**
-Slurping, barfing and wrapping are also bound on other mnemonic keys.
+Slurping, barfing and wrapping are also bound on other keys.
 
 ### Other commands:
 
-Key Binding    | Function
----------------|------------------------------------------------------------
-<kbd>(</kbd>   | insert expression before (same level as current one)
-<kbd>)</kbd>   | insert expression after (same level as current one)
-<kbd>a</kbd>   | absorb expression
-<kbd>b</kbd>   | forward barf expression
-<kbd>B</kbd>   | backward barf expression
-<kbd>c</kbd>   | convolute expression
-<kbd>e$</kbd>  | evaluate line
-<kbd>ee</kbd>  | evaluate last expression
-<kbd>ef</kbd>  | evaluate function
-<kbd>i</kbd>   | switch to `insert state`
-<kbd>I</kbd>   | go to beginning of current expression and switch to `insert state`
-<kbd>m</kbd>   | merge (join) expression
-<kbd>p</kbd>   | paste after
-<kbd>P</kbd>   | paste before
-<kbd>q</kbd>   | unwrap current expression and kill all symbols after point
-<kbd>Q</kbd>   | unwrap current expression and kill all symbols before point
-<kbd>r</kbd>   | raise expression (replace parent expression by current one)
-<kbd>s</kbd>   | forwared slurp expression
-<kbd>S</kbd>   | backward slurp expression
-<kbd>T</kbd>   | transpose expression
-<kbd>u</kbd>   | undo
-<kbd>C-r</kbd> | redo
-<kbd>v</kbd>   | switch to `visual state`
-<kbd>V</kbd>   | switch to `visual line state`
-<kbd>C-v</kbd> | switch to `visual block state`
-<kbd>w</kbd>   | wrap expression with parenthesis
-<kbd>W</kbd>   | unwrap expression
-<kbd>xs</kbd>  | delete symbol
-<kbd>xw</kbd>  | delete word
-<kbd>xx</kbd>  | delete expression
-<kbd>y</kbd>   | copy expression
-
+Key Binding                 | Function
+----------------------------|------------------------------------------------------------
+<kbd>\<leader\> m (</kbd>   | insert expression before (same level as current one)
+<kbd>\<leader\> m )</kbd>   | insert expression after (same level as current one)
+<kbd>\<leader\> m a</kbd>   | absorb expression
+<kbd>\<leader\> m b</kbd>   | forward barf expression
+<kbd>\<leader\> m B</kbd>   | backward barf expression
+<kbd>\<leader\> m c</kbd>   | convolute expression
+<kbd>\<leader\> m i</kbd>   | switch to `insert state`
+<kbd>\<leader\> m I</kbd>   | go to beginning of current expression and switch to `insert state`
+<kbd>\<leader\> m m</kbd>   | merge (join) expression
+<kbd>\<leader\> m n</kbd>   | forwared slurp expression
+<kbd>\<leader\> m N</kbd>   | backward slurp expression
+<kbd>\<leader\> m p</kbd>   | paste after
+<kbd>\<leader\> m P</kbd>   | paste before
+<kbd>\<leader\> m q</kbd>   | unwrap current expression and kill all symbols after point
+<kbd>\<leader\> m Q</kbd>   | unwrap current expression and kill all symbols before point
+<kbd>\<leader\> m r</kbd>   | raise expression (replace parent expression by current one)
+<kbd>\<leader\> m T</kbd>   | transpose expression
+<kbd>\<leader\> m u</kbd>   | undo
+<kbd>\<leader\> m C-r</kbd> | redo
+<kbd>\<leader\> m v</kbd>   | switch to `visual state`
+<kbd>\<leader\> m V</kbd>   | switch to `visual line state`
+<kbd>\<leader\> m C-v</kbd> | switch to `visual block state`
+<kbd>\<leader\> m w</kbd>   | wrap expression with parenthesis
+<kbd>\<leader\> m W</kbd>   | unwrap expression
+<kbd>\<leader\> m xs</kbd>  | delete symbol
+<kbd>\<leader\> m xw</kbd>  | delete word
+<kbd>\<leader\> m xx</kbd>  | delete expression
+<kbd>\<leader\> m y</kbd>   | copy expression
 
 ## Configuration
 
