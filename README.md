@@ -66,14 +66,14 @@ Evil Lisp state binds the most common used commands on hjkl:
 
 Key Binding   | Function
 --------------|------------------------------------------------------------
-`h`           | previous symbol
-`H`           | forward barf sexp (move the current symbol or sexp outside)
-`j`           | next closing parenthesis
-`J`           | wrap symbol with parenthesis (down one level)
-`k`           | previous opening parenthesis
-`K`           | unwrap current sexp (up one level)
-`l`           | next symbol
-`L`           | forward slurp sexp (move next outside sexp into current one)
+<kbd>h</kbd>  | previous symbol
+<kbd>H</kbd>  | forward barf sexp (move the current symbol or sexp outside)
+<kbd>j</kbd>  | next closing parenthesis
+<kbd>J</kbd>  | wrap symbol with parenthesis (down one level)
+<kbd>k</kbd>  | previous opening parenthesis
+<kbd>K</kbd>  | unwrap current sexp (up one level)
+<kbd>l</kbd>  | next symbol
+<kbd>L</kbd>  | forward slurp sexp (move next outside sexp into current one)
 
 So with just hjkl keys you can:
 - navigate between symbols and sexps
@@ -85,39 +85,39 @@ Slurping, barfing and wrapping are also bound on other mnemonic keys.
 
 ### Other commands:
 
-Key Binding   | Function
---------------|------------------------------------------------------------
-`(`           | insert expression before (same level as current one)
-`)`           | insert expression after (same level as current one)
-`a`           | absorb expression
-`b`           | forward barf expression
-`B`           | backward barf expression
-`c`           | convolute expression
-`e$`          | evaluate line
-`ee`          | evaluate last expression
-`ef`          | evaluate function
-`i`           | switch to `insert state`
-`I`           | go to beginning of current expression and switch to `insert state`
-`m`           | merge (join) expression
-`p`           | paste after
-`P`           | paste before
-`q`           | unwrap current expression and kill all symbols after point
-`Q`           | unwrap current expression and kill all symbols before point
-`r`           | raise expression (replace parent expression by current one)
-`s`           | forwared slurp expression
-`S`           | backward slurp expression
-`T`           | transpose expression
-`u`           | undo
-`C-r`         | redo
-`v`           | switch to `visual state`
-`V`           | switch to `visual line state`
-`C-v`         | switch to `visual block state`
-`w`           | wrap expression with parenthesis
-`W`           | unwrap expression
-`xs`          | delete symbol
-`xw`          | delete word
-`xx`          | delete expression
-`y`           | copy expression
+Key Binding    | Function
+---------------|------------------------------------------------------------
+<kbd>(</kbd>   | insert expression before (same level as current one)
+<kbd>)</kbd>   | insert expression after (same level as current one)
+<kbd>a</kbd>   | absorb expression
+<kbd>b</kbd>   | forward barf expression
+<kbd>B</kbd>   | backward barf expression
+<kbd>c</kbd>   | convolute expression
+<kbd>e$</kbd>  | evaluate line
+<kbd>ee</kbd>  | evaluate last expression
+<kbd>ef</kbd>  | evaluate function
+<kbd>i</kbd>   | switch to `insert state`
+<kbd>I</kbd>   | go to beginning of current expression and switch to `insert state`
+<kbd>m</kbd>   | merge (join) expression
+<kbd>p</kbd>   | paste after
+<kbd>P</kbd>   | paste before
+<kbd>q</kbd>   | unwrap current expression and kill all symbols after point
+<kbd>Q</kbd>   | unwrap current expression and kill all symbols before point
+<kbd>r</kbd>   | raise expression (replace parent expression by current one)
+<kbd>s</kbd>   | forwared slurp expression
+<kbd>S</kbd>   | backward slurp expression
+<kbd>T</kbd>   | transpose expression
+<kbd>u</kbd>   | undo
+<kbd>C-r</kbd> | redo
+<kbd>v</kbd>   | switch to `visual state`
+<kbd>V</kbd>   | switch to `visual line state`
+<kbd>C-v</kbd> | switch to `visual block state`
+<kbd>w</kbd>   | wrap expression with parenthesis
+<kbd>W</kbd>   | unwrap expression
+<kbd>xs</kbd>  | delete symbol
+<kbd>xw</kbd>  | delete word
+<kbd>xx</kbd>  | delete expression
+<kbd>y</kbd>   | copy expression
 
 
 ## Configuration
