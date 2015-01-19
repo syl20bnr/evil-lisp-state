@@ -65,6 +65,8 @@ Key Binding                 | Function
 <kbd>\<leader\> m :</kbd>   | ex command
 <kbd>\<leader\> m (</kbd>   | insert expression before (same level as current one)
 <kbd>\<leader\> m )</kbd>   | insert expression after (same level as current one)
+<kbd>\<leader\> m $</kbd>   | go to the end of current sexp
+<kbd>\<leader\> m 0</kbd>   | go to the beginning of current sexp
 <kbd>\<leader\> m a</kbd>   | absorb expression
 <kbd>\<leader\> m b</kbd>   | forward barf expression
 <kbd>\<leader\> m B</kbd>   | backward barf expression

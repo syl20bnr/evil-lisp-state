@@ -50,6 +50,8 @@
 ;; `leader m :'   | ex command
 ;; `leader m ('   | insert expression before (same level as current one)
 ;; `leader m )'   | insert expression after (same level as current one)
+;; `leader m $'   | go to the end of current sexp
+;; `leader m 0'   | go to the beginning of current sexp
 ;; `leader m a'   | absorb expression
 ;; `leader m b'   | forward barf expression
 ;; `leader m B'   | backward barf expression
@@ -173,6 +175,8 @@
     (":"   . evil-ex)
     ("("   . lisp-state-insert-sexp-before)
     (")"   . lisp-state-insert-sexp-after)
+    ("$"   . sp-end-of-sexp)
+    ("0"   . lisp-state-beginning-of-sexp)
     ("1"   . digit-argument)
     ("2"   . digit-argument)
     ("3"   . digit-argument)
@@ -307,6 +311,12 @@
   (save-excursion
     (end-of-line)
     (eval-last-sexp nil)))
+
+(defun lisp-state-beginning-of-sexp (&optional arg)
+  "Go to the beginning of current s-exp"
+  (interactive "P")
+  (sp-beginning-of-sexp)
+  (evil-backward-char))
 
 
 (provide 'evil-lisp-state)
