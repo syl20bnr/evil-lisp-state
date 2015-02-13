@@ -24,7 +24,7 @@ using mnemonic key bindings.
 You can either install `evil-lisp-state` from [MELPA][melpa-link]:
 
 ```
- M-x package-install evil-list-state
+ M-x package-install evil-lisp-state
 ```
 
 Or add it to your `Cask` file:
