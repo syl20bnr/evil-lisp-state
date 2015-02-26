@@ -44,99 +44,71 @@ both `evil`, `evil-leader` and `smartparens` to be installed.
 
 To execute a command while in normal state, the evil-leader is used.
 By default, the prefix for each command is `<leader> m`.
-
-Some commands when executed set the current state to `lisp state`.
+Commands when executed set the current state to `lisp state`.
 
 Examples:
 
 - to slurp three times while in normal state:
 
-    <leader> m 3 n
+    <leader> m 3 s
 
 - to wrap a symbol in parenthesis then slurping two times:
 
-    <leader> m w 2 n
+    <leader> m w 2 s
 
 ## Key Bindings
 
-### Auto-switch commands
-
-These commands switch to `lisp state`.
-
 Key Binding                 | Function
 ----------------------------|------------------------------------------------------------
-<kbd>\<leader\></kbd>       | evil leader
-<kbd>\<leader\> m %</kbd>   | evil jump item
-<kbd>\<leader\> m :</kbd>   | ex command
-<kbd>\<leader\> m (</kbd>   | insert expression before (same level as current one)
-<kbd>\<leader\> m )</kbd>   | insert expression after (same level as current one)
-<kbd>\<leader\> m $</kbd>   | go to the end of current sexp
-<kbd>\<leader\> m 0</kbd>   | go to the beginning of current sexp
-<kbd>\<leader\> m a</kbd>   | absorb expression
-<kbd>\<leader\> m A</kbd>   | transpose expression
-<kbd>\<leader\> m b</kbd>   | forward barf expression
-<kbd>\<leader\> m B</kbd>   | backward barf expression
-<kbd>\<leader\> m c</kbd>   | convolute expression
-<kbd>\<leader\> m h</kbd>   | backward char
-<kbd>\<leader\> m H</kbd>   | previous symbol
-<kbd>\<leader\> m i</kbd>   | switch to `insert state`
-<kbd>\<leader\> m I</kbd>   | go to beginning of current expression and switch to `insert state`
-<kbd>\<leader\> m j</kbd>   | next visual line
-<kbd>\<leader\> m J</kbd>   | next closing parenthesis
-<kbd>\<leader\> m k</kbd>   | previous visual line
-<kbd>\<leader\> m K</kbd>   | previous opening parenthesis
-<kbd>\<leader\> m l</kbd>   | forward char
-<kbd>\<leader\> m L</kbd>   | next symbol
-<kbd>\<leader\> m m</kbd>   | merge (join) expression
-<kbd>\<leader\> m n</kbd>   | forwared slurp expression
-<kbd>\<leader\> m N</kbd>   | backward slurp expression
-<kbd>\<leader\> m p</kbd>   | paste after
-<kbd>\<leader\> m P</kbd>   | paste before
-<kbd>\<leader\> m q</kbd>   | unwrap current expression and kill all symbols after point
-<kbd>\<leader\> m Q</kbd>   | unwrap current expression and kill all symbols before point
-<kbd>\<leader\> m r</kbd>   | raise expression (replace parent expression by current one)
-<kbd>\<leader\> m u</kbd>   | undo
-<kbd>\<leader\> m C-r</kbd> | redo
-<kbd>\<leader\> m v</kbd>   | switch to `visual state`
-<kbd>\<leader\> m V</kbd>   | switch to `visual line state`
-<kbd>\<leader\> m C-v</kbd> | switch to `visual block state`
-<kbd>\<leader\> m w</kbd>   | wrap expression with parenthesis
-<kbd>\<leader\> m W</kbd>   | unwrap expression
-<kbd>\<leader\> m xs</kbd>  | delete symbol
-<kbd>\<leader\> m xw</kbd>  | delete word
-<kbd>\<leader\> m xx</kbd>  | delete expression
-<kbd>\<leader\> m y</kbd>   | copy expression
-
-### Lisp state commands
-
-These commands can be executed in `lisp state'.
-
-Key Binding    | Function
----------------|------------------------------------------------------------
-<kbd>h</kbd>   | backward char
-<kbd>j</kbd>   | next visual line
-<kbd>k</kbd>   | previous visual line
-<kbd>l</kbd>   | forward char
-
-### Other commands
-
-These commands can be executed in any state.
-
-Key Binding                 | Function
-----------------------------|------------------------------------------------------------
-<kbd>\<leader\> m e $</kbd> | go to end of line and evaluate last sexp
-<kbd>\<leader\> m e e</kbd> | evaluate last sexp
-<kbd>\<leader\> m e f</kbd> | evaluate current defun
-<kbd>\<leader\> m g g</kbd> | go to definition
-<kbd>\<leader\> m h h</kbd> | describe elisp thing at point (show documentation)
-<kbd>\<leader\> m t b</kbd> | execute buffer tests
-<kbd>\<leader\> m t q</kbd> | ask for test function to execute
+<kbd>\<leader\> k %</kbd>   | evil jump item
+<kbd>\<leader\> k :</kbd>   | ex command
+<kbd>\<leader\> k (</kbd>   | insert expression before (same level as current one)
+<kbd>\<leader\> k )</kbd>   | insert expression after (same level as current one)
+<kbd>\<leader\> k $</kbd>   | go to the end of current sexp
+<kbd>\<leader\> k 0</kbd>   | go to the beginning of current sexp
+<kbd>\<leader\> k a</kbd>   | absorb expression
+<kbd>\<leader\> k b</kbd>   | forward barf expression
+<kbd>\<leader\> k B</kbd>   | backward barf expression
+<kbd>\<leader\> k c</kbd>   | convolute expression
+<kbd>\<leader\> k ds</kbd>  | delete symbol
+<kbd>\<leader\> k Ds</kbd>  | backward delete symbol
+<kbd>\<leader\> k dw</kbd>  | delete word
+<kbd>\<leader\> k Dw</kbd>  | backward delete word
+<kbd>\<leader\> k dx</kbd>  | delete expression
+<kbd>\<leader\> k Dx</kbd>  | backward delete expression
+<kbd>\<leader\> k e</kbd>   | unwrap current expression and kill all symbols after point
+<kbd>\<leader\> k E</kbd>   | unwrap current expression and kill all symbols before point
+<kbd>\<leader\> k h</kbd>   | previous symbol
+<kbd>\<leader\> k i</kbd>   | switch to `insert state`
+<kbd>\<leader\> k I</kbd>   | go to beginning of current expression and switch to `insert state`
+<kbd>\<leader\> k j</kbd>   | next closing parenthesis
+<kbd>\<leader\> k J</kbd>   | join expression
+<kbd>\<leader\> k k</kbd>   | previous opening parenthesis
+<kbd>\<leader\> k l</kbd>   | next symbol
+<kbd>\<leader\> k p</kbd>   | paste after
+<kbd>\<leader\> k P</kbd>   | paste before
+<kbd>\<leader\> k r</kbd>   | raise expression (replace parent expression by current one)
+<kbd>\<leader\> k s</kbd>   | forwared slurp expression
+<kbd>\<leader\> k S</kbd>   | backward slurp expression
+<kbd>\<leader\> k t</kbd>   | transpose expression
+<kbd>\<leader\> k u</kbd>   | undo
+<kbd>\<leader\> k C-r</kbd> | redo
+<kbd>\<leader\> k v</kbd>   | switch to `visual state`
+<kbd>\<leader\> k V</kbd>   | switch to `visual line state`
+<kbd>\<leader\> k C-v</kbd> | switch to `visual block state`
+<kbd>\<leader\> k w</kbd>   | wrap expression with parenthesis
+<kbd>\<leader\> k W</kbd>   | unwrap expression
+<kbd>\<leader\> k y</kbd>   | copy expression
 
 ## Configuration
 
 Key bindings are set only for `emacs-lisp-mode` by default.
 It is possible to add major modes with the variable
-`evil-lisp-state-major-modes`.
+`evil-lisp-state-major-modes'.
+
+It is also possible to define the key bindings globally by
+setting `evil-lisp-state-global` to t. In this case
+`evil-lisp-state-major-modes' has no effect.
 
 The prefix key is `<leader> m` by default, it is possible to
 change the `m` key to anything else with the variable
