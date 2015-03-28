@@ -226,7 +226,7 @@ If `evil-lisp-state-global' is non nil then this variable has no effect."
         (define-key evil-lisp-state-map ,(kbd key) ',cmd)
         (if evil-lisp-state-global
             (evil-leader/set-key
-              ,(kbd (concat evil-lisp-state-leader-prefix " "key))
+              ,(kbd (concat evil-lisp-state-leader-prefix " " key))
               (evil-lisp-state-enter-command ,cmd))
           (dolist (mm evil-lisp-state-major-modes)
             (evil-leader/set-key-for-mode mm
