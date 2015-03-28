@@ -83,12 +83,14 @@ Key Binding                 | Function
 <kbd>\<leader\> m e</kbd>   | unwrap current expression and kill all symbols after point
 <kbd>\<leader\> m E</kbd>   | unwrap current expression and kill all symbols before point
 <kbd>\<leader\> m h</kbd>   | previous symbol
+<kbd>\<leader\> m H</kbd>   | go to previous sexp
 <kbd>\<leader\> m i</kbd>   | switch to `insert state`
 <kbd>\<leader\> m I</kbd>   | go to beginning of current expression and switch to `insert state`
 <kbd>\<leader\> m j</kbd>   | next closing parenthesis
 <kbd>\<leader\> m J</kbd>   | join expression
 <kbd>\<leader\> m k</kbd>   | previous opening parenthesis
 <kbd>\<leader\> m l</kbd>   | next symbol
+<kbd>\<leader\> m L</kbd>   | go to next sexp
 <kbd>\<leader\> m p</kbd>   | paste after
 <kbd>\<leader\> m P</kbd>   | paste before
 <kbd>\<leader\> m r</kbd>   | raise expression (replace parent expression by current one)
@@ -96,6 +98,7 @@ Key Binding                 | Function
 <kbd>\<leader\> m S</kbd>   | backward slurp expression
 <kbd>\<leader\> m t</kbd>   | transpose expression
 <kbd>\<leader\> m u</kbd>   | undo
+<kbd>\<leader\> m U</kbd>   | got to parent sexp backward
 <kbd>\<leader\> m C-r</kbd> | redo
 <kbd>\<leader\> m v</kbd>   | switch to `visual state`
 <kbd>\<leader\> m V</kbd>   | switch to `visual line state`

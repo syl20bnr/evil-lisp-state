@@ -64,12 +64,14 @@
 ;; `leader m e'   | (splice) unwrap current expression and kill all symbols after point
 ;; `leader m E'   | (splice) unwrap current expression and kill all symbols before point
 ;; `leader m h'   | previous symbol
+;; `leader m H'   | go to previous sexp
 ;; `leader m i'   | switch to `insert state`
 ;; `leader m I'   | go to beginning of current expression and switch to `insert state`
 ;; `leader m j'   | next closing parenthesis
 ;; `leader m J'   | join expression
 ;; `leader m k'   | previous opening parenthesis
 ;; `leader m l'   | next symbol
+;; `leader m L'   | go to next sexp
 ;; `leader m p'   | paste after
 ;; `leader m P'   | paste before
 ;; `leader m r'   | raise expression (replace parent expression by current one)
@@ -77,6 +79,7 @@
 ;; `leader m S'   | backward slurp expression
 ;; `leader m t'   | transpose expression
 ;; `leader m u'   | undo
+;; `leader m U'   | got to parent sexp backward
 ;; `leader m C-r' | redo
 ;; `leader m v'   | switch to `visual state`
 ;; `leader m V'   | switch to `visual line state`
@@ -205,12 +208,14 @@ If `evil-lisp-state-global' is non nil then this variable has no effect."
     ("e"   . sp-splice-sexp-killing-forward)
     ("E"   . sp-splice-sexp-killing-backward)
     ("h"   . sp-backward-symbol)
+    ("H"   . sp-backward-sexp)
     ("i"   . evil-insert-state)
     ("I"   . evil-insert-line)
     ("j"   . lisp-state-next-closing-paren)
     ("J"   . sp-join-sexp)
     ("k"   . lisp-state-prev-opening-paren)
     ("l"   . lisp-state-forward-symbol)
+    ("L"   . sp-forward-sexp)
     ("p"   . evil-paste-after)
     ("P"   . evil-paste-before)
     ("r"   . sp-raise-sexp)
@@ -218,6 +223,7 @@ If `evil-lisp-state-global' is non nil then this variable has no effect."
     ("S"   . sp-backward-slurp-sexp)
     ("t"   . sp-transpose-sexp)
     ("u"   . undo-tree-undo)
+    ("U"   . sp-backward-up-sexp)
     ("C-r" . undo-tree-redo)
     ("v"   . evil-visual-char)
     ("V"   . evil-visual-line)
