@@ -65,6 +65,10 @@ Key Binding                 | Function
 <kbd>\<leader\> m (</kbd>   | insert expression before (same level as current one)
 <kbd>\<leader\> m )</kbd>   | insert expression after (same level as current one)
 <kbd>\<leader\> m $</kbd>   | go to the end of current sexp
+<kbd>\<leader\> m ` k</kbd> | hybrid version of kill sexp (can be used in non lisp dialects)
+<kbd>\<leader\> m ` p</kbd> | hybrid version of push sexp (can be used in non lisp dialects)
+<kbd>\<leader\> m ` s</kbd> | hybrid version of slurp sexp (can be used in non lisp dialects)
+<kbd>\<leader\> m ` t</kbd> | hybrid version of transpose sexp (can be used in non lisp dialects)
 <kbd>\<leader\> m 0</kbd>   | go to the beginning of current sexp
 <kbd>\<leader\> m a</kbd>   | absorb expression
 <kbd>\<leader\> m b</kbd>   | forward barf expression

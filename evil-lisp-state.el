@@ -5,7 +5,7 @@
 ;; Author: Sylvain Benner <sylvain.benner@gmail.com>
 ;; Keywords: convenience editing evil smartparens lisp mnemonic
 ;; Created: 9 Oct 2014
-;; Version: 7.0
+;; Version: 7.1
 ;; Package-Requires: ((evil "1.0.9") (evil-leader "0.4.3") (smartparens "1.6.1"))
 ;; URL: https://github.com/syl20bnr/evil-lisp-state
 
@@ -49,6 +49,10 @@
 ;; `leader m ('   | insert expression before (same level as current one)
 ;; `leader m )'   | insert expression after (same level as current one)
 ;; `leader m $'   | go to the end of current sexp
+;; `leader m ` k' | hybrid version of kill sexp (can be used in non lisp dialects)
+;; `leader m ` p' | hybrid version of push sexp (can be used in non lisp dialects)
+;; `leader m ` s' | hybrid version of slurp sexp (can be used in non lisp dialects)
+;; `leader m ` t' | hybrid version of transpose sexp (can be used in non lisp dialects)
 ;; `leader m 0'   | go to the beginning of current sexp
 ;; `leader m a'   | absorb expression
 ;; `leader m b'   | forward barf expression
@@ -174,6 +178,10 @@ If `evil-lisp-state-global' is non nil then this variable has no effect."
     ("("   . lisp-state-insert-sexp-before)
     (")"   . lisp-state-insert-sexp-after)
     ("$"   . sp-end-of-sexp)
+    ("`k"  . sp-kill-hybrid-sexp)
+    ("`p"  . sp-push-hybrid-sexp)
+    ("`s"  . sp-slurp-hybrid-sexp)
+    ("`t"  . sp-transpose-hybrid-sexp)
     ("0"   . lisp-state-beginning-of-sexp)
     ("1"   . digit-argument)
     ("2"   . digit-argument)
