@@ -247,9 +247,11 @@ If `evil-lisp-state-global' is non nil then this variable has no effect."
 (defun lisp-state-toggle-lisp-state ()
   "Toggle the lisp state."
   (interactive)
-  (message "state: %s" evil-state)
   (if (eq 'lisp evil-state)
-      (evil-normal-state)
+      (progn
+        (message "state: lisp -> normal")
+        (evil-normal-state))
+    (message "state: %s -> lisp" evil-state)
     (evil-lisp-state)))
 
 (defun lisp-state-wrap (&optional arg)
