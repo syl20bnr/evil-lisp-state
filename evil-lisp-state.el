@@ -140,6 +140,11 @@
     "Major modes where evil leader key bindings are defined.
 If `evil-lisp-state-global' is non nil then this variable has no effect."
     :type 'sexp
+    :group 'evil-lisp-state)
+
+  (defcustom evil-lisp-state-enter-lisp-state-on-command t
+    "If non nil, enter evil-lisp-state before executing command."
+    :type 'sexp
     :group 'evil-lisp-state))
 
 (defmacro evil-lisp-state-enter-command (command)
@@ -241,11 +246,15 @@ If `evil-lisp-state-global' is non nil then this variable has no effect."
         (if evil-lisp-state-global
             (evil-leader/set-key
               ,(kbd (concat evil-lisp-state-leader-prefix " " key))
-              (evil-lisp-state-enter-command ,cmd))
+              (if evil-lisp-state-enter-lisp-state-on-command
+                  (evil-lisp-state-enter-command ,cmd)
+                ',cmd))
           (dolist (mm evil-lisp-state-major-modes)
             (evil-leader/set-key-for-mode mm
               ,(kbd (concat evil-lisp-state-leader-prefix " " key))
-              (evil-lisp-state-enter-command ,cmd))))))))
+              (if evil-lisp-state-enter-lisp-state-on-command
+                  (evil-lisp-state-enter-command ,cmd)
+                ',cmd))))))))
 
 (defun lisp-state-toggle-lisp-state ()
   "Toggle the lisp state."
