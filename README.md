@@ -38,90 +38,86 @@ Or add it to your `Cask` file:
 ### Manually
 
 Add `evil-lisp-state.el` to your load path. `evil-lisp-state` requires
-both `evil`, `evil-leader` and `smartparens` to be installed.
+both `evil`, `bind-map` and `smartparens` to be installed.
 
 ## Principle
 
-To execute a command while in normal state, the evil-leader is used.
-By default, the prefix for each command is `<leader> m`.
-Commands when executed set the current state to `lisp state`.
+To execute a command while in normal state, a leader key is used.
+By default, the leader for each command is `SPC l`.
+Any command when executed sets the current state to `lisp state`.
 
 Examples:
 
 - to slurp three times while in normal state:
 
-    <leader> m 3 s
+    <leader> 3 s
 
 - to wrap a symbol in parenthesis then slurping two times:
 
-    <leader> m w 2 s
+    <leader> w 2 s
 
 ## Key Bindings
 
-Key Binding                 | Function
-----------------------------|------------------------------------------------------------
-<kbd>\<leader\> m %</kbd>   | evil jump item
-<kbd>\<leader\> m :</kbd>   | ex command
-<kbd>\<leader\> m (</kbd>   | insert expression before (same level as current one)
-<kbd>\<leader\> m )</kbd>   | insert expression after (same level as current one)
-<kbd>\<leader\> m $</kbd>   | go to the end of current sexp
-<kbd>\<leader\> m ` k</kbd> | hybrid version of kill sexp (can be used in non lisp dialects)
-<kbd>\<leader\> m ` p</kbd> | hybrid version of push sexp (can be used in non lisp dialects)
-<kbd>\<leader\> m ` s</kbd> | hybrid version of slurp sexp (can be used in non lisp dialects)
-<kbd>\<leader\> m ` t</kbd> | hybrid version of transpose sexp (can be used in non lisp dialects)
-<kbd>\<leader\> m 0</kbd>   | go to the beginning of current sexp
-<kbd>\<leader\> m a</kbd>   | absorb expression
-<kbd>\<leader\> m b</kbd>   | forward barf expression
-<kbd>\<leader\> m B</kbd>   | backward barf expression
-<kbd>\<leader\> m c</kbd>   | convolute expression
-<kbd>\<leader\> m ds</kbd>  | delete symbol
-<kbd>\<leader\> m Ds</kbd>  | backward delete symbol
-<kbd>\<leader\> m dw</kbd>  | delete word
-<kbd>\<leader\> m Dw</kbd>  | backward delete word
-<kbd>\<leader\> m dx</kbd>  | delete expression
-<kbd>\<leader\> m Dx</kbd>  | backward delete expression
-<kbd>\<leader\> m e</kbd>   | unwrap current expression and kill all symbols after point
-<kbd>\<leader\> m E</kbd>   | unwrap current expression and kill all symbols before point
-<kbd>\<leader\> m h</kbd>   | previous symbol
-<kbd>\<leader\> m H</kbd>   | go to previous sexp
-<kbd>\<leader\> m i</kbd>   | switch to `insert state`
-<kbd>\<leader\> m I</kbd>   | go to beginning of current expression and switch to `insert state`
-<kbd>\<leader\> m j</kbd>   | next closing parenthesis
-<kbd>\<leader\> m J</kbd>   | join expression
-<kbd>\<leader\> m k</kbd>   | previous opening parenthesis
-<kbd>\<leader\> m l</kbd>   | next symbol
-<kbd>\<leader\> m L</kbd>   | go to next sexp
-<kbd>\<leader\> m p</kbd>   | paste after
-<kbd>\<leader\> m P</kbd>   | paste before
-<kbd>\<leader\> m r</kbd>   | raise expression (replace parent expression by current one)
-<kbd>\<leader\> m s</kbd>   | forwared slurp expression
-<kbd>\<leader\> m S</kbd>   | backward slurp expression
-<kbd>\<leader\> m t</kbd>   | transpose expression
-<kbd>\<leader\> m u</kbd>   | undo
-<kbd>\<leader\> m U</kbd>   | got to parent sexp backward
-<kbd>\<leader\> m C-r</kbd> | redo
-<kbd>\<leader\> m v</kbd>   | switch to `visual state`
-<kbd>\<leader\> m V</kbd>   | switch to `visual line state`
-<kbd>\<leader\> m C-v</kbd> | switch to `visual block state`
-<kbd>\<leader\> m w</kbd>   | wrap expression with parenthesis
-<kbd>\<leader\> m W</kbd>   | unwrap expression
-<kbd>\<leader\> m y</kbd>   | copy expression
+Key Binding               | Function
+--------------------------|------------------------------------------------------------
+<kbd>\<leader\> %</kbd>   | evil jump item
+<kbd>\<leader\> :</kbd>   | ex command
+<kbd>\<leader\> (</kbd>   | insert expression before (same level as current one)
+<kbd>\<leader\> )</kbd>   | insert expression after (same level as current one)
+<kbd>\<leader\> $</kbd>   | go to the end of current sexp
+<kbd>\<leader\> ` k</kbd> | hybrid version of kill sexp (can be used in non lisp dialects)
+<kbd>\<leader\> ` p</kbd> | hybrid version of push sexp (can be used in non lisp dialects)
+<kbd>\<leader\> ` s</kbd> | hybrid version of slurp sexp (can be used in non lisp dialects)
+<kbd>\<leader\> ` t</kbd> | hybrid version of transpose sexp (can be used in non lisp dialects)
+<kbd>\<leader\> 0</kbd>   | go to the beginning of current sexp
+<kbd>\<leader\> a</kbd>   | absorb expression
+<kbd>\<leader\> b</kbd>   | forward barf expression
+<kbd>\<leader\> B</kbd>   | backward barf expression
+<kbd>\<leader\> c</kbd>   | convolute expression
+<kbd>\<leader\> ds</kbd>  | delete symbol
+<kbd>\<leader\> Ds</kbd>  | backward delete symbol
+<kbd>\<leader\> dw</kbd>  | delete word
+<kbd>\<leader\> Dw</kbd>  | backward delete word
+<kbd>\<leader\> dx</kbd>  | delete expression
+<kbd>\<leader\> Dx</kbd>  | backward delete expression
+<kbd>\<leader\> e</kbd>   | unwrap current expression and kill all symbols after point
+<kbd>\<leader\> E</kbd>   | unwrap current expression and kill all symbols before point
+<kbd>\<leader\> h</kbd>   | previous symbol
+<kbd>\<leader\> H</kbd>   | go to previous sexp
+<kbd>\<leader\> i</kbd>   | switch to `insert state`
+<kbd>\<leader\> I</kbd>   | go to beginning of current expression and switch to `insert state`
+<kbd>\<leader\> j</kbd>   | next closing parenthesis
+<kbd>\<leader\> J</kbd>   | join expression
+<kbd>\<leader\> k</kbd>   | previous opening parenthesis
+<kbd>\<leader\> l</kbd>   | next symbol
+<kbd>\<leader\> L</kbd>   | go to next sexp
+<kbd>\<leader\> p</kbd>   | paste after
+<kbd>\<leader\> P</kbd>   | paste before
+<kbd>\<leader\> r</kbd>   | raise expression (replace parent expression by current one)
+<kbd>\<leader\> s</kbd>   | forwared slurp expression
+<kbd>\<leader\> S</kbd>   | backward slurp expression
+<kbd>\<leader\> t</kbd>   | transpose expression
+<kbd>\<leader\> u</kbd>   | undo
+<kbd>\<leader\> U</kbd>   | got to parent sexp backward
+<kbd>\<leader\> C-r</kbd> | redo
+<kbd>\<leader\> v</kbd>   | switch to `visual state`
+<kbd>\<leader\> V</kbd>   | switch to `visual line state`
+<kbd>\<leader\> C-v</kbd> | switch to `visual block state`
+<kbd>\<leader\> w</kbd>   | wrap expression with parenthesis
+<kbd>\<leader\> W</kbd>   | unwrap expression
+<kbd>\<leader\> y</kbd>   | copy expression
 
 ## Configuration
 
-Key bindings are set only for `emacs-lisp-mode` by default.
-It is possible to add major modes with the variable
-`evil-lisp-state-major-modes'.
+Key bindings are set only for `emacs-lisp-mode` by default. It is possible to
+add major modes with the variable `evil-lisp-state-major-modes'.
 
-It is also possible to define the key bindings globally by
-setting `evil-lisp-state-global` to t. In this case
-`evil-lisp-state-major-modes' has no effect.
+It is also possible to define the key bindings globally by setting
+`evil-lisp-state-global` to t. In this case `evil-lisp-state-major-modes' has no
+effect.
 
-The prefix key is `<leader> m` by default, it is possible to
-change the `m` key to anything else with the variable
-`evil-lisp-state-leader-prefix`. Set it to an empty string
-if you want all the commands to be directly available
-under the `<leader>` key.
+The leader key is `SPC l` by default, it is possible to change it with the
+variable `evil-lisp-state-leader'.
 
 [evil-link]: https://gitorious.org/evil/pages/Home
 [smartparens-link]: https://github.com/Fuco1/smartparens/wiki
