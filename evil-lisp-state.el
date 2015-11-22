@@ -34,7 +34,8 @@
 
 ;; To execute a command while in normal state, a leader is used.
 ;; By default, the leader for each command is `SPC l`.
-;; Any command when executed sets the current state to `lisp state`.
+;; By default, any command when executed sets the current state to
+;; `lisp state`.
 
 ;; By example, to slurp three times while in normal state:
 ;;     <leader> 3 s
@@ -101,6 +102,10 @@
 ;; The leader key is `SPC l' by default, it is possible to
 ;; change it with the variable `evil-lisp-state-leader'.
 
+;; If you don't want commands to enter in `lisp state' by default
+;; set the variable `evil-lisp-state-enter-lisp-state-on-command'
+;; to nil. Then use the `,,' to enter manually in `lisp state'
+
 ;;; Code:
 
 (require 'evil)
@@ -135,6 +140,11 @@
     "Major modes where evil leader key bindings are defined.
 If `evil-lisp-state-global' is non nil then this variable has no effect."
     :type 'sexp
+    :group 'evil-lisp-state)
+
+  (defcustom evil-lisp-state-enter-lisp-state-on-command nil
+    "If non nil, enter evil-lisp-state before executing command."
+    :type 'sexp
     :group 'evil-lisp-state))
 
 (defmacro evil-lisp-state-enter-command (command)
@@ -146,7 +156,8 @@ If `evil-lisp-state-global' is non nil then this variable has no effect."
     `(progn
        (defun ,funcname ()
         (interactive)
-        (evil-lisp-state)
+        (when evil-lisp-state-enter-lisp-state-on-command
+          (evil-lisp-state))
         (call-interactively ',command))
        ',funcname)))
 
@@ -241,17 +252,17 @@ If `evil-lisp-state-global' is non nil then this variable has no effect."
     (eval
      `(progn
         (if evil-lisp-state-global
-            (define-key evil-lisp-state-map ,(kbd key) ',cmd)
-          (define-key evil-lisp-state-major-mode-map ,(kbd key) ',cmd))))))
+            (define-key evil-lisp-state-map ,(kbd key)
+              (evil-lisp-state-enter-command ,cmd))
+          (define-key evil-lisp-state-major-mode-map ,(kbd key)
+            (evil-lisp-state-enter-command ,cmd)))))))
 
 (defun lisp-state-toggle-lisp-state ()
   "Toggle the lisp state."
   (interactive)
+  (message "state: %s" evil-state)
   (if (eq 'lisp evil-state)
-      (progn
-        (message "state: lisp -> normal")
-        (evil-normal-state))
-    (message "state: %s -> lisp" evil-state)
+      (evil-normal-state)
     (evil-lisp-state)))
 
 (defun lisp-state-wrap (&optional arg)

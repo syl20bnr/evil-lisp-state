@@ -44,7 +44,7 @@ both `evil`, `bind-map` and `smartparens` to be installed.
 
 To execute a command while in normal state, a leader key is used.
 By default, the leader for each command is `SPC l`.
-Any command when executed sets the current state to `lisp state`.
+By default any command when executed sets the current state to `lisp state`.
 
 Examples:
 
@@ -118,6 +118,10 @@ effect.
 
 The leader key is `SPC l` by default, it is possible to change it with the
 variable `evil-lisp-state-leader'.
+
+If you don't want commands to enter in `lisp state` by default set the variable
+`evil-lisp-state-enter-lisp-state-on-command` to nil. Then use the
+<kbd>,,</kbd> to enter manually in `lisp state`
 
 [evil-link]: https://gitorious.org/evil/pages/Home
 [smartparens-link]: https://github.com/Fuco1/smartparens/wiki
