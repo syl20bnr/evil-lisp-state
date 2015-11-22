@@ -142,7 +142,7 @@ If `evil-lisp-state-global' is non nil then this variable has no effect."
     :type 'sexp
     :group 'evil-lisp-state)
 
-  (defcustom evil-lisp-state-enter-lisp-state-on-command nil
+  (defcustom evil-lisp-state-enter-lisp-state-on-command t
     "If non nil, enter evil-lisp-state before executing command."
     :type 'sexp
     :group 'evil-lisp-state))
