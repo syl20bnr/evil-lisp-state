@@ -44,6 +44,7 @@
 
 ;; Key Binding  | Function
 ;; -------------|------------------------------------------------------------
+;; `leader .'   | switch to `lisp state'
 ;; `leader %'   | evil jump item
 ;; `leader :'   | ex command
 ;; `leader ('   | insert expression before (same level as current one)
@@ -104,7 +105,7 @@
 
 ;; If you don't want commands to enter in `lisp state' by default
 ;; set the variable `evil-lisp-state-enter-lisp-state-on-command'
-;; to nil. Then use the `,,' to enter manually in `lisp state'
+;; to nil. Then use the `.' to enter manually in `lisp state'
 
 ;;; Code:
 
@@ -179,7 +180,7 @@ If `evil-lisp-state-global' is non nil then this variable has no effect."
 ;; escape
 (define-key evil-lisp-state-map [escape] 'evil-normal-state)
 ;; toggle lisp state
-(define-key evil-lisp-state-map ",," 'lisp-state-toggle-lisp-state)
+(define-key evil-lisp-state-map "." 'lisp-state-toggle-lisp-state)
 ;; hjkl
 (define-key evil-lisp-state-map "h" 'evil-backward-char)
 (define-key evil-lisp-state-map "j" 'evil-next-visual-line)

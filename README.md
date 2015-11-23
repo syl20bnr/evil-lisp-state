@@ -60,6 +60,7 @@ Examples:
 
 Key Binding               | Function
 --------------------------|------------------------------------------------------------
+<kbd>\<leader\> .</kbd>   | switch to `lisp state`
 <kbd>\<leader\> %</kbd>   | evil jump item
 <kbd>\<leader\> :</kbd>   | ex command
 <kbd>\<leader\> (</kbd>   | insert expression before (same level as current one)
@@ -121,7 +122,7 @@ function `evil-lisp-state-leader`.
 
 If you don't want commands to enter in `lisp state` by default set the variable
 `evil-lisp-state-enter-lisp-state-on-command` to nil. Then use the
-<kbd>,,</kbd> to enter manually in `lisp state`
+<kbd><leader> .</kbd> to enter manually in `lisp state`
 
 [evil-link]: https://gitorious.org/evil/pages/Home
 [smartparens-link]: https://github.com/Fuco1/smartparens/wiki
