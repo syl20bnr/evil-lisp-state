@@ -117,7 +117,7 @@ It is also possible to define the key bindings globally by setting
 effect.
 
 The leader key is `SPC l` by default, it is possible to change it with the
-variable `evil-lisp-state-leader'.
+function `evil-lisp-state-leader`.
 
 If you don't want commands to enter in `lisp state` by default set the variable
 `evil-lisp-state-enter-lisp-state-on-command` to nil. Then use the

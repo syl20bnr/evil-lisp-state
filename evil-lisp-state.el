@@ -100,7 +100,7 @@
 ;; `evil-lisp-state-major-modes' has no effect.
 
 ;; The leader key is `SPC l' by default, it is possible to
-;; change it with the variable `evil-lisp-state-leader'.
+;; change it with the function `evil-lisp-state-leader'.
 
 ;; If you don't want commands to enter in `lisp state' by default
 ;; set the variable `evil-lisp-state-enter-lisp-state-on-command'
@@ -126,11 +126,6 @@
   :prefix 'evil-lisp-state-)
 
 (eval-and-compile
-  (defcustom evil-lisp-state-leader "SPC l"
-    "Leader key."
-    :type 'string
-    :group 'evil-lisp-state)
-
   (defcustom evil-lisp-state-global nil
     "If non nil evil-lisp-state is available everywhere."
     :type 'boolean
@@ -170,13 +165,16 @@ If `evil-lisp-state-global' is non nil then this variable has no effect."
 
 
 ;; leader maps
-(bind-map evil-lisp-state-map
-  :evil-keys (evil-lisp-state-leader)
-  :evil-states (normal))
-(bind-map evil-lisp-state-major-modes-map
-  :evil-keys (evil-lisp-state-leader)
-  :evil-states (normal)
-  :major-modes (evil-lisp-state-major-modes))
+(defun evil-lisp-state-leader (leader)
+  "Set LEADER."
+  (bind-map evil-lisp-state-map
+    :evil-keys (evil-lisp-state-leader)
+    :evil-states (normal))
+  (bind-map evil-lisp-state-major-modes-map
+    :evil-keys (evil-lisp-state-leader)
+    :evil-states (normal)
+    :major-modes (evil-lisp-state-major-modes)))
+(evil-lisp-state-leader "SPC l")
 
 ;; escape
 (define-key evil-lisp-state-map [escape] 'evil-normal-state)
