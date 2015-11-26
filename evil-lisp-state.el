@@ -111,6 +111,7 @@
 
 (require 'evil)
 (require 'smartparens)
+(require 'bind-map)
 
 (evil-define-state lisp
   "Lisp state.
@@ -171,10 +172,11 @@ If `evil-lisp-state-global' is non nil then this variable has no effect."
   (bind-map evil-lisp-state-map
     :evil-keys (leader)
     :evil-states (normal))
-  (bind-map evil-lisp-state-major-modes-map
-    :evil-keys (leader)
-    :evil-states (normal)
-    :major-modes (evil-lisp-state-major-modes)))
+  (eval
+   `(bind-map evil-lisp-state-major-mode-map
+      :evil-keys (,leader)
+      :evil-states (normal)
+      :major-modes ,evil-lisp-state-major-modes)))
 (evil-lisp-state-leader "SPC l")
 
 ;; escape
