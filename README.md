@@ -43,7 +43,7 @@ both `evil`, `bind-map` and `smartparens` to be installed.
 ## Principle
 
 To execute a command while in normal state, a leader key is used.
-By default, the leader for each command is `SPC l`.
+The leader has to be defined with the function `evil-lisp-state-leader`.
 By default any command when executed sets the current state to `lisp state`.
 
 Examples:
@@ -110,15 +110,20 @@ Key Binding               | Function
 
 ## Configuration
 
+No default binding comes with the package, you have to explicitly
+bind the lisp state to a key with the function `evil-lisp-state-leader`
+For instance:
+
+```elisp
+(evil-lisp-state-leader ", l")
+```
+
 Key bindings are set only for `emacs-lisp-mode` by default. It is possible to
 add major modes with the variable `evil-lisp-state-major-modes'.
 
 It is also possible to define the key bindings globally by setting
 `evil-lisp-state-global` to t. In this case `evil-lisp-state-major-modes' has no
 effect.
-
-The leader key is `SPC l` by default, it is possible to change it with the
-function `evil-lisp-state-leader`.
 
 If you don't want commands to enter in `lisp state` by default set the variable
 `evil-lisp-state-enter-lisp-state-on-command` to nil. Then use the
