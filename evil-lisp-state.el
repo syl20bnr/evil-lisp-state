@@ -170,6 +170,7 @@ If `evil-lisp-state-global' is non nil then this variable has no effect."
 (defun evil-lisp-state-leader (leader)
   "Set LEADER."
   (bind-map evil-lisp-state-map
+    :evil-use-local t
     :evil-keys (leader)
     :evil-states (normal))
   (eval
