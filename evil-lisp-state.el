@@ -68,9 +68,9 @@
 ;; `leader H'   | go to previous sexp
 ;; `leader i'   | switch to `insert state`
 ;; `leader I'   | go to beginning of current expression and switch to `insert state`
-;; `leader j'   | next closing parenthesis
+;; `leader j'   | next closing parenthesis/bracket/brace
 ;; `leader J'   | join expression
-;; `leader k'   | previous opening parenthesis
+;; `leader k'   | previous opening parenthesis/bracket/brace
 ;; `leader l'   | next symbol
 ;; `leader L'   | go to next sexp
 ;; `leader p'   | paste after
@@ -285,13 +285,13 @@ If `evil-lisp-state-global' is non nil then this variable has no effect."
   (sp-wrap-with-pair "("))
 
 (defun evil-lisp-state-next-paren (&optional closing)
-  "Go to the next/previous closing/opening parenthesis."
+  "Go to the next/previous closing/opening parenthesis/bracket/brace."
   (if closing
       (let ((curr (point)))
         (forward-char)
-        (unless (eq curr (search-forward ")"))
+        (unless (eq curr (search-forward-regexp "[])}]"))
           (backward-char)))
-    (search-backward "(")))
+    (search-backward-regexp "[[({]")))
 
 (defun lisp-state-prev-opening-paren ()
   "Go to the next closing parenthesis."
