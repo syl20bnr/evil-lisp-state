@@ -123,6 +123,10 @@
   ;; force smartparens mode
   (if (evil-lisp-state-p) (smartparens-mode)))
 
+(defvar evil-lisp-state-major-mode-map (make-sparse-keymap)
+  "Keymap used by evil-lisp-state when `evil-lisp-state-global'
+is nil.")
+
 (defgroup evil-lisp-state nil
   "Evil lisp state."
   :group 'emulations
