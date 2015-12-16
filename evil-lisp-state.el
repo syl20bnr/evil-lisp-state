@@ -248,6 +248,9 @@ If `evil-lisp-state-global' is non nil then this variable has no effect."
     ("W"   . sp-unwrap-sexp)
     ("y"   . sp-copy-sexp))
   "alist of keys and commands in lisp state.")
+
+(defvar evil-lisp-state-major-mode-map (make-sparse-keymap))
+
 (dolist (x evil-lisp-state-commands)
   (let ((key (car x))
         (cmd (cdr x)))
