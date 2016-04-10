@@ -157,7 +157,7 @@ If `evil-lisp-state-global' is non nil then this variable has no effect."
     `(progn
        (defun ,funcname ()
         (interactive)
-        (when evil-lisp-state-enter-lisp-state-on-command
+        (when (and evil-state evil-lisp-state-enter-lisp-state-on-command)
           (evil-lisp-state))
         (call-interactively ',command))
        ',funcname)))
