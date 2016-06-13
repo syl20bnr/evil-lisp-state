@@ -259,16 +259,24 @@ If `evil-lisp-state-global' is non nil then this variable has no effect."
 
 (defvar evil-lisp-state-major-mode-map (make-sparse-keymap))
 
-(dolist (x evil-lisp-state-commands)
-  (let ((key (car x))
-        (cmd (cdr x)))
-    (eval
-     `(progn
-        (if evil-lisp-state-global
-            (define-key evil-lisp-state-map ,(kbd key)
-              (evil-lisp-state-enter-command ,cmd))
-          (define-key evil-lisp-state-major-mode-map ,(kbd key)
-            (evil-lisp-state-enter-command ,cmd)))))))
+
+(defmacro evil-lisp-state-set-keys ()
+  "Set the keybindings."
+  (let (result '())
+    (dolist (x evil-lisp-state-commands)
+      (let ((key (car x))
+	    (cmd (cdr x)))
+	(push
+	 (if evil-lisp-state-global
+	     `(define-key evil-lisp-state-map ,(kbd key)
+		(evil-lisp-state-enter-command ,cmd))
+	   `(define-key evil-lisp-state-major-mode-map ,(kbd key)
+	      (evil-lisp-state-enter-command ,cmd)))
+	 result)
+	))
+    (cons 'progn (reverse result))))
+
+(evil-lisp-state-set-keys)
 
 (defun lisp-state-toggle-lisp-state ()
   "Toggle the lisp state."
