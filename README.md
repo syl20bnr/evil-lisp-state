@@ -129,6 +129,6 @@ If you don't want commands to enter in `lisp state` by default set the variable
 `evil-lisp-state-enter-lisp-state-on-command` to nil. Then use the
 <kbd><leader> .</kbd> to enter manually in `lisp state`
 
-[evil-link]: https://gitorious.org/evil/pages/Home
+[evil-link]: https://www.emacswiki.org/emacs/Evil
 [smartparens-link]: https://github.com/Fuco1/smartparens/wiki
 [melpa-link]: http://melpa.org/
