@@ -329,7 +329,7 @@ If `evil-lisp-state-global' is non nil then this variable has no effect."
     (evil-insert-state)
     (sp-newline)
     (evil-previous-visual-line)
-    (evil-end-of-line)
+    (end-of-line)
     (insert " ")
     (sp-insert-pair "(")
     (indent-for-tab-command)))
