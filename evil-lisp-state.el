@@ -123,6 +123,10 @@
   ;; force smartparens mode
   (if (evil-lisp-state-p) (smartparens-mode)))
 
+(defvar evil-lisp-state-major-mode-map (make-sparse-keymap)
+  "Keymap used by evil-lisp-state when `evil-lisp-state-global'
+is nil.")
+
 (defgroup evil-lisp-state nil
   "Evil lisp state."
   :group 'emulations
@@ -173,15 +177,16 @@ If `evil-lisp-state-global' is non nil then this variable has no effect."
 ;; leader maps
 (defun evil-lisp-state-leader (leader)
   "Set LEADER."
-  (bind-map evil-lisp-state-map
-    :evil-use-local t
-    :evil-keys (leader)
-    :evil-states (normal))
-  (eval
-   `(bind-map evil-lisp-state-major-mode-map
-      :evil-keys (,leader)
-      :evil-states (normal)
-      :major-modes ,evil-lisp-state-major-modes)))
+  (if evil-lisp-state-global
+      (bind-map evil-lisp-state-map
+        :evil-use-local t
+        :evil-keys (leader)
+        :evil-states (normal))
+    (eval
+     `(bind-map evil-lisp-state-major-mode-map
+        :evil-keys (,leader)
+        :evil-states (normal)
+        :major-modes ,evil-lisp-state-major-modes))))
 
 (defun evil-lisp-state/quit ()
   "Quit lisp state and set state `evil-lisp-state-default-state'."
