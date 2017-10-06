@@ -12,7 +12,7 @@ using mnemonic key bindings.
         - [Package manager](#package-manager)
         - [Manually](#manually)
     - [Principle](#principle)
-    - [Commands and key bindings](#commands-and-key-bindings)
+    - [Commands and key bindings](#key-bindings)
     - [Configuration](#configuration)
 
 <!-- markdown-toc end -->
