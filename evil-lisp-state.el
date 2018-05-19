@@ -204,7 +204,7 @@ If `evil-lisp-state-global' is non nil then this variable has no effect."
     (":"   . evil-ex)
     ("("   . lisp-state-insert-sexp-before)
     (")"   . lisp-state-insert-sexp-after)
-    ("$"   . sp-end-of-sexp)
+    ("$"   . lisp-state-end-of-sexp)
     ("`k"  . sp-kill-hybrid-sexp)
     ("`p"  . sp-push-hybrid-sexp)
     ("`s"  . sp-slurp-hybrid-sexp)
@@ -347,6 +347,11 @@ If `evil-lisp-state-global' is non nil then this variable has no effect."
   (sp-beginning-of-sexp)
   (evil-backward-char))
 
+(defun lisp-state-end-of-sexp (&optional arg)
+  "Go to the end of current s-exp"
+  (interactive "P")
+  (forward-char)
+  (sp-end-of-sexp))
 
 (provide 'evil-lisp-state)
 
