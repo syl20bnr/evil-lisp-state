@@ -254,7 +254,8 @@ If `evil-lisp-state-global' is non nil then this variable has no effect."
     ("C-v" . evil-visual-block)
     ("w"   . lisp-state-wrap)
     ("W"   . sp-unwrap-sexp)
-    ("y"   . sp-copy-sexp))
+    ("y"   . sp-copy-sexp)
+    ("="   . lisp-state-reindent))
   "alist of keys and commands in lisp state.")
 
 (defvar evil-lisp-state-major-mode-map (make-sparse-keymap))
@@ -347,6 +348,13 @@ If `evil-lisp-state-global' is non nil then this variable has no effect."
   (sp-beginning-of-sexp)
   (evil-backward-char))
 
+(defun lisp-state-reindent ()
+  "Re-indent everything within parent sexp"
+  (interactive)
+  (save-excursion
+    (backward-up-list 2 t)
+    (let ((bounds (bounds-of-thing-at-point 'sexp)))
+      (evil-indent (car bounds) (cdr bounds)))))
 
 (provide 'evil-lisp-state)
 
