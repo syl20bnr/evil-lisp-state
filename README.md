@@ -12,7 +12,7 @@ using mnemonic key bindings.
         - [Package manager](#package-manager)
         - [Manually](#manually)
     - [Principle](#principle)
-    - [Commands and key bindings](#commands-and-key-bindings)
+    - [Commands and key bindings](#key-bindings)
     - [Configuration](#configuration)
 
 <!-- markdown-toc end -->
@@ -107,6 +107,7 @@ Key Binding               | Function
 <kbd>\<leader\> w</kbd>   | wrap expression with parenthesis
 <kbd>\<leader\> W</kbd>   | unwrap expression
 <kbd>\<leader\> y</kbd>   | copy expression
+<kbd>\<leader\> =</kbd>   | re-indent expression
 
 ## Configuration
 
