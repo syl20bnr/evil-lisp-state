@@ -95,7 +95,7 @@ Key Binding               | Function
 <kbd>\<leader\> p</kbd>   | paste after
 <kbd>\<leader\> P</kbd>   | paste before
 <kbd>\<leader\> r</kbd>   | raise expression (replace parent expression by current one)
-<kbd>\<leader\> s</kbd>   | forwared slurp expression
+<kbd>\<leader\> s</kbd>   | forward slurp expression
 <kbd>\<leader\> S</kbd>   | backward slurp expression
 <kbd>\<leader\> t</kbd>   | transpose expression
 <kbd>\<leader\> u</kbd>   | undo
