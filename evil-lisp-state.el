@@ -115,10 +115,12 @@
 (require 'bind-map)
 
 (defun evil-lisp-restore-smartparens-state()
-  (when (and (boundp 'evil-lisp-state-smartparens-keep) (not evil-lisp-state-smartparens-keep))
+  (when (and (boundp 'evil-lisp-state-smartparens-keep)
+             (not evil-lisp-state-smartparens-keep))
     (smartparens-mode -1)))
 
-(add-hook 'evil-lisp-state-exit-hook #'evil-lisp-restore-smartparens-state)
+(add-hook 'evil-lisp-state-exit-hook
+          #'evil-lisp-restore-smartparens-state)
 
 (evil-define-state lisp
   "Lisp state.
@@ -126,11 +128,11 @@
   :tag " <L> "
   :suppress-keymap t
   :cursor (bar . 2)
-  (if (evil-lisp-state-p)
-    (progn
-      (setq-local evil-lisp-state-smartparens-keep (symbol-value 'smartparens-mode))
+  (when (evil-lisp-state-p)
+      (setq-local evil-lisp-state-smartparens-keep
+                  (symbol-value 'smartparens-mode))
       ;; force smartparens mode
-      (smartparens-mode))))
+      (smartparens-mode)))
 
 (defgroup evil-lisp-state nil
   "Evil lisp state."
