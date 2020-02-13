@@ -48,7 +48,7 @@ By default any command when executed sets the current state to `lisp state`.
 
 Examples:
 
-- to slurp three times while in normal state:
+- to slurp three times while in `lisp state`:
 
     <leader> 3 s
 
